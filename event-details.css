@@ -1,0 +1,156 @@
+/* Original generated assets are local; all copy remains editable HTML. */
+#event-details.poets {
+  --paper: #f6f2e9;
+  --ink: #302d29;
+  --muted-ink: #686057;
+  --rule: rgb(77 66 52 / 24%);
+  color: var(--ink);
+  background: #f6f2e9 url("assets/ttpd-paper-background.webp") center top / cover no-repeat;
+  padding: 28px max(16px, env(safe-area-inset-right)) max(64px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  font-family: Georgia, "Times New Roman", serif;
+}
+.poets__paper {
+  position: relative;
+  isolation: isolate;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 72px);
+  background-color: var(--paper);
+  background-image: linear-gradient(rgb(246 242 233 / 70%), rgb(246 242 233 / 70%)), url("assets/ttpd-paper-background.webp");
+  background-size: cover;
+  box-shadow: 0 12px 35px rgb(51 43 30 / 7%), 0 1px 2px rgb(51 43 30 / 10%);
+  border-bottom: 2px solid rgb(102 85 66 / 11%);
+  border-radius: 1px 0 2px 1px;
+}
+.poets__paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 9px 5px at 92% 31%, rgb(36 30 26 / 4%), transparent), radial-gradient(ellipse 5px 10px at 6% 72%, rgb(36 30 26 / 3%), transparent), radial-gradient(ellipse 14px 4px at 86% 89%, rgb(36 30 26 / 3%), transparent);
+}
+.poets__paper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+  background: linear-gradient(225deg, #e9e4da 49%, #d8d0c1 50%, #eae3d7 63%, #f6f2e9 100%);
+}
+.poets__file, .poets__entry dt, .poets__location-stamp, .poets__countdown h3, .poets__clock dt, .poets__folio, .poets__stamp {
+  font-family: "Courier New", Courier, monospace;
+}
+.poets__file { display: flex; justify-content: space-between; gap: 12px; font-size: 10px; letter-spacing: .09em; line-height: 1.6; }
+.poets__file span:last-child { color: var(--muted-ink); text-align: right; }
+.poets__heading { border-bottom: 1px solid var(--ink); padding-bottom: 26px; }
+.poets__heading h2 { margin: 38px 0 14px; font-size: clamp(26px, 5.5vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -.04em; }
+.poets__subtitle { margin: 0; color: var(--muted-ink); font-style: italic; font-size: clamp(14px, 2.7vw, 18px); line-height: 1.6; }
+.poets__intro { max-width: 550px; margin: 30px 0 34px; }
+.poets__intro p { font-size: clamp(18px, 3.6vw, 23px); line-height: 1.55; margin: 0; }
+.poets__intro .poets__translation { font-size: 12px; line-height: 1.8; margin-top: 14px; color: var(--muted-ink); font-family: "Segoe UI", sans-serif; }
+.poets__entries { margin: 0; display: grid; grid-template-columns: 1fr; }
+.poets__dossier { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 42px; align-items: start; }
+.poets__record { min-width: 0; }
+.poets__photo-archive { min-width: 0; margin: 15px 0 32px; }
+.poets__reference { margin: 0; min-width: 0; }
+.poets__reference img { display: block; width: 100%; height: auto; filter: none; }
+.poets__reference figcaption { margin: 12px 0 0; color: var(--muted-ink); font: 9px/1.6 "Courier New", monospace; letter-spacing: .08em; }
+.poets__reference--main { width: 90%; margin-inline: auto; }
+.poets__archive-pair { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 16px; margin-top: 30px; }
+.poets__archive-pair .poets__photo { margin: 0; max-width: none; }
+.poets__archive-pair .poets__photo-frame { padding: 7px 7px 14px; }
+.poets__archive-pair .poets__photo-placeholder { inset: 6px; font-size: 8px; letter-spacing: .03em; gap: 8px; }
+.poets__archive-pair .poets__photo-placeholder small { font-size: 10px; }
+.poets__archive-pair .poets__photo figcaption { font-size: 9px; letter-spacing: .04em; }
+.poets__archive-pair .poets__photo-frame::before { width: 42px; height: 15px; left: -5px; top: -5px; }
+.poets__photo { position: relative; width: 100%; margin: 15px 0 36px; }
+.poets__photo-frame { position: relative; padding: 12px 12px 24px; background: #f9f7f1; box-shadow: 0 4px 12px rgb(41 35 28 / 12%); border: 1px solid rgb(96 81 62 / 14%); }
+.poets__photo-frame::before { content: ""; position: absolute; top: -8px; left: -12px; width: 76px; height: 23px; transform: rotate(-24deg); background: repeating-linear-gradient(90deg, rgb(164 134 85 / 2%) 0 2px, transparent 2px 5px), rgb(205 186 148 / 60%); z-index: 2; pointer-events: none; }
+.poets__photo-surface { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: #e5e1d9; }
+.poets__photo-surface img { display: block; width: 100%; height: 100%; object-fit: contain; filter: grayscale(1) contrast(1.08); }
+.poets__photo-surface.has-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08; background: repeating-radial-gradient(circle at 20% 40%, #282522 0 .5px, transparent .7px 2px); }
+.poets__photo-placeholder { position: absolute; inset: 12px; border: 1px solid rgb(80 71 56 / 20%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; color: #6a6258; font: 11px/1.8 "Courier New", monospace; letter-spacing: .12em; }
+.poets__photo-placeholder small { font: italic 13px/1.5 Georgia, serif; letter-spacing: 0; }
+.poets__photo figcaption { margin: 14px 0 0; color: var(--muted-ink); font: 10px/1.6 "Courier New", monospace; letter-spacing: .12em; }
+.poets__photo.is-placed { animation: poets-place 1000ms ease both; }
+.poets__ink, .poets__flower { position: absolute; pointer-events: none; user-select: none; object-fit: contain; height: auto; }
+.poets__ink { width: 125px; top: 4px; left: -32px; opacity: .07; }
+.poets__flower { width: 76px; right: 0; bottom: 170px; opacity: .7; }
+@keyframes poets-place { from { opacity: 0; transform: translateY(10px) scale(1.015); } to { opacity: 1; transform: none; } }
+.poets__entry { min-width: 0; padding: 21px 0 24px; border-top: 1px solid var(--rule); }
+.poets__entry:last-child { grid-column: 1 / -1; }
+.poets__entry dt { font-size: 10px; line-height: 1.7; letter-spacing: .07em; }
+.poets__entry dd { margin: 10px 0 0; font-size: clamp(18px, 3.4vw, 23px); line-height: 1.5; overflow-wrap: anywhere; }
+.poets__location { margin: 3px 0 38px; }
+.poets__location-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 13px 18px;
+  border: 1px solid #36312c;
+  border-width: 1px 2px 2px 1px;
+  box-shadow: inset 0 0 0 2px var(--paper), inset 0 0 0 3px rgb(48 45 41 / 28%);
+  color: var(--ink);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: .1em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+.poets__location-stamp[href]:hover { background: rgb(87 67 42 / 6%); }
+.poets__location-stamp[href]:active { transform: translateY(1px); background: rgb(87 67 42 / 12%); }
+.poets__location-stamp:focus-visible { outline: 2px solid #564536; outline-offset: 5px; }
+.poets__location-stamp[aria-disabled="true"] { cursor: not-allowed; }
+.poets__note { margin: 11px 0 0; font: 11px/1.7 "Segoe UI", sans-serif; color: var(--muted-ink); }
+.poets__countdown { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 26px 0; text-align: center; }
+.poets__countdown h3 { margin: 0 0 24px; font-size: 10px; line-height: 1.8; font-weight: 400; letter-spacing: .15em; }
+.poets__clock { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; }
+.poets__clock > div { display: flex; flex-direction: column-reverse; gap: 8px; min-width: 0; padding: 0 5px; border-left: 1px solid var(--rule); }
+.poets__clock > div:first-child { border-left: 0; }
+.poets__clock dt { font-size: 9px; letter-spacing: .04em; }
+.poets__clock dd { margin: 0; font-size: clamp(32px, 6vw, 56px); line-height: 1.15; font-variant-numeric: tabular-nums lining-nums; min-height: 1.15em; }
+.poets__begun { margin: 12px 0; font-size: clamp(22px, 4vw, 32px); line-height: 1.4; }
+.poets__footer { position: relative; padding-top: 30px; }
+.poets__signature { font: 700 38px/1.5 "Kalam", "Segoe Print", cursive; color: #51443a; }
+.poets__stamp { position: absolute; right: 1px; top: 42px; padding: 7px 10px; border: 2px double #807366; color: #746557; font-size: clamp(11px, 2vw, 15px); letter-spacing: .1em; transform: rotate(-8deg); opacity: .8; pointer-events: none; }
+.poets__folio { display: flex; justify-content: space-between; margin-top: 35px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 9px; letter-spacing: .14em; color: var(--muted-ink); }
+.poets.is-revealed .poets__paper { animation: poets-paper 1100ms ease both; }
+.poets.is-revealed .poets__heading h2 { animation: poets-title 1000ms ease 180ms both; }
+.poets.is-stamped .poets__stamp { animation: poets-stamp 650ms ease 150ms both; }
+@keyframes poets-paper { from { opacity: 0; } to { opacity: 1; } }
+@keyframes poets-title { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes poets-stamp { from { opacity: 0; transform: rotate(-8deg) scale(1.04); } to { opacity: .8; transform: rotate(-8deg) scale(1); } }
+@media (max-width: 600px) {
+  .poets__entries { grid-template-columns: 1fr; }
+  .poets__entry:last-child { grid-column: auto; }
+  .poets__paper { padding-inline: 25px; }
+  .poets__file { font-size: 8px; }
+  .poets__heading h2 { margin-top: 30px; }
+  .poets__stamp { top: 46px; }
+}
+@media (max-width: 760px) {
+  .poets__photo-archive { width: min(100%, 290px); margin-inline: auto; }
+  .poets__reference--main { width: 72%; }
+  .poets__dossier { grid-template-columns: 1fr; gap: 0; }
+  .poets__photo { max-width: 195px; margin: 12px auto 35px; }
+  .poets__flower { width: 30px; right: 0; bottom: 150px; opacity: .55; }
+  .poets__ink { width: 75px; left: -18px; }
+}
+@media (max-width: 359px) {
+  .poets__paper { padding-inline: 20px; }
+  .poets__clock { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 22px; }
+  .poets__clock > div:nth-child(3) { border-left: 0; }
+  .poets__stamp { font-size: 9px; padding: 6px; }
+  .poets__location-stamp { font-size: 10px; padding-inline: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .poets *, .poets *::before, .poets *::after { animation: none !important; transition: none !important; }
+}

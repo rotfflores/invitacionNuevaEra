@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#a5d4e8">
+    <title>Alison’s Era · Invitación de cumpleaños</title>
+    <link rel="preload" href="assets/kalam-bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="midnights.css">
+    <script src="midnights.js" defer></script>
+    <link rel="stylesheet" href="event-details.css">
+    <script src="event-config.js?v=model-reference" defer></script>
+    <script src="event-details.js" defer></script>
+    <link rel="stylesheet" href="reputation.css">
+    <script src="reputation.js" defer></script>
+    <link rel="stylesheet" href="red-gallery.css">
+    <script src="red-gallery-config.js" defer></script>
+    <script src="red-gallery.js" defer></script>
+  </head>
+  <body class="cover-open">
+    <section class="cover" id="invitation-cover" aria-labelledby="era-title">
+      <video class="cover__video" id="cover-video" autoplay muted loop playsinline
+        preload="auto" poster="assets/1989-poster.jpg" aria-hidden="true" tabindex="-1"
+        disablepictureinpicture disableremoteplayback>
+        <source src="assets/1989-background.mp4" type="video/mp4">
+      </video>
+      <div class="cover__wash" aria-hidden="true"></div>
+
+      <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Sonido del video" aria-pressed="false">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M11 5 6 9H3v6h3l5 4Z"/>
+          <path class="sound-toggle__off" d="m16 9 6 6m0-6-6 6"/>
+          <path class="sound-toggle__on" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
+        </svg>
+        <span id="sound-label">ACTIVAR AUDIO</span>
+      </button>
+      <p class="sound-status" id="sound-status" role="status"></p>
+
+      <div class="cover__content">
+        <p class="cover__eyebrow enter enter--welcome">WELCOME TO</p>
+        <!-- Personaliza el nombre aquí. -->
+        <h1 class="cover__title enter enter--title" id="era-title">ALISON’S ERA</h1>
+        <p class="cover__message enter enter--details">Estás invitada a celebrar una noche<br class="wide-break"> que nunca pasará de moda.</p>
+        <div class="enter enter--details">
+          <button class="invitation-ticket" id="open-invitation" type="button" aria-controls="invitation-content">
+            <span>ABRIR INVITACIÓN</span>
+            <svg class="icon invitation-ticket__star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="m12 1 3.2 7.8L23 12l-7.8 3.2L12 23l-3.2-7.8L1 12l7.8-3.2Z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <p class="cover__hint enter enter--details" aria-hidden="true">TOCA PARA ENTRAR <svg class="icon" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="m12 1 3.2 7.8L23 12l-7.8 3.2L12 23l-3.2-7.8L1 12l7.8-3.2Z"/></svg></p>
+    </section>
+
+    <main id="invitation-content" tabindex="-1" aria-label="Contenido de la invitación" hidden>
+      <header class="midnights" id="midnights" aria-labelledby="midnights-name">
+        <div class="midnights__backdrop" aria-hidden="true">
+          <video id="midnights-blur" autoplay muted loop playsinline preload="none" tabindex="-1" disablepictureinpicture disableremoteplayback>
+            <source data-src="assets/midnights-background.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="midnights__portrait" aria-hidden="true">
+          <video id="midnights-video" autoplay muted loop playsinline preload="none" poster="assets/midnights-poster.jpg" tabindex="-1" disablepictureinpicture disableremoteplayback>
+            <source data-src="assets/midnights-background.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="midnights__gradient" aria-hidden="true"></div>
+        <div class="midnights__copy">
+          <p class="midnights__eyebrow midnight-enter midnight-enter--intro">MEET ME AT MIDNIGHT</p>
+          <h2 class="midnights__name midnight-enter midnight-enter--name" id="midnights-name">Alison</h2>
+          <!-- Datos pendientes: sustituir edad y fecha cuando se confirmen. -->
+          <p class="midnights__era midnight-enter midnight-enter--date">IS ENTERING HER [EDAD] ERA</p>
+          <p class="midnights__date midnight-enter midnight-enter--date">[FECHA DEL EVENTO]</p>
+        </div>
+        <a class="midnights__discover midnight-enter midnight-enter--discover" href="#event-details">
+          <span>Desliza para descubrir cada era</span>
+          <svg class="midnights__arrow" viewBox="0 0 24 36" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v29m-7-7 7 7 7-7"/></svg>
+        </a>
+      </header>
+      <section class="poets" id="event-details" tabindex="-1" aria-labelledby="poets-title">
+        <article class="poets__paper">
+          <img class="poets__ink" src="assets/ink-stain.png" width="240" height="240" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <img class="poets__flower" src="assets/pressed-flower.png" width="300" height="450" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <header class="poets__heading">
+            <div class="poets__file"><span>FILE NO. 13</span><span aria-hidden="true">PRIVATE RECORD / A.</span></div>
+            <h2 id="poets-title">THE BIRTHDAY<br>POETS DEPARTMENT</h2>
+            <p class="poets__subtitle" lang="en">An official record of Alison’s next era</p>
+          </header>
+
+          <div class="poets__intro">
+            <p lang="en">After careful examination, you have been selected to witness the beginning of a new chapter.</p>
+            <p class="poets__translation">Después de una cuidadosa selección, has sido elegida para presenciar el comienzo de un nuevo capítulo.</p>
+          </div>
+
+          <div class="poets__dossier">
+            <div class="poets__photo-archive">
+              <figure class="poets__reference poets__reference--main">
+                <div class="poets__photo-frame">
+                  <img src="assets/ttpd-taylor-portrait.jpg" alt="Taylor Swift de perfil, retrato de la era The Tortured Poets Department" width="1599" height="2132" loading="lazy" decoding="async">
+                </div>
+                <figcaption>TAYLOR SWIFT / TTPD</figcaption>
+              </figure>
+              <div class="poets__archive-pair">
+                <figure class="poets__reference poets__reference--tour">
+                  <div class="poets__photo-frame">
+                    <img src="assets/ttpd-taylor-tour.webp" alt="Taylor Swift en The Eras Tour con el vestido blanco de The Tortured Poets Department" width="970" height="1787" loading="lazy" decoding="async">
+                  </div>
+                  <figcaption>THE ERAS TOUR / TTPD</figcaption>
+                </figure>
+            <figure class="poets__photo">
+              <div class="poets__photo-frame">
+                <div class="poets__photo-surface">
+                  <img id="alison-photo" alt="Modelo de referencia provisional para la fotografía de Alison" hidden decoding="async">
+                  <div class="poets__photo-placeholder" id="alison-photo-placeholder">
+                    <span>FOTOGRAFÍA<br>DE ALISON</span>
+                    <small>Pendiente de añadir</small>
+                  </div>
+                </div>
+              </div>
+              <figcaption>MODEL REFERENCE / ALISON</figcaption>
+            </figure>
+              </div>
+            </div>
+            <div class="poets__record">
+          <dl class="poets__entries">
+            <div class="poets__entry"><dt>DATE OF PUBLICATION</dt><dd id="event-date">[FECHA]</dd></div>
+            <div class="poets__entry"><dt>APPOINTED HOUR</dt><dd id="event-hour">[HORA]</dd></div>
+            <div class="poets__entry"><dt>MEETING PLACE</dt><dd id="event-venue">[NOMBRE DEL LUGAR]</dd></div>
+            <div class="poets__entry"><dt>CONFIDENTIAL ADDRESS</dt><dd id="event-address">[DIRECCIÓN COMPLETA]</dd></div>
+          </dl>
+
+          <div class="poets__location">
+            <a class="poets__location-stamp" id="event-map" role="link" tabindex="0" aria-disabled="true" aria-label="Abrir la ubicación del evento en Google Maps, en una pestaña nueva" aria-describedby="event-map-note" target="_blank" rel="noopener noreferrer">OPEN CONFIDENTIAL LOCATION</a>
+            <p class="poets__note" id="event-map-note">Ubicación pendiente de confirmar.</p>
+          </div>
+            </div>
+          </div>
+
+          <section class="poets__countdown" aria-labelledby="countdown-title">
+            <h3 id="countdown-title">THE NEXT CHAPTER BEGINS IN</h3>
+            <dl class="poets__clock" id="event-clock" role="timer" aria-live="off" aria-label="Tiempo restante para el evento">
+              <div><dt>DAYS</dt><dd id="countdown-days">--</dd></div>
+              <div><dt>HOURS</dt><dd id="countdown-hours">--</dd></div>
+              <div><dt>MINUTES</dt><dd id="countdown-minutes">--</dd></div>
+              <div><dt>SECONDS</dt><dd id="countdown-seconds">--</dd></div>
+            </dl>
+            <p class="poets__begun" id="chapter-begun" hidden lang="en">THE CHAPTER HAS BEGUN</p>
+            <p class="poets__note" id="countdown-note" role="status">Fecha y hora pendientes de confirmar.</p>
+          </section>
+
+          <footer class="poets__footer" aria-hidden="true">
+            <div class="poets__signature">Alison</div>
+            <span class="poets__stamp">CONFIDENTIAL</span>
+            <div class="poets__folio"><span>THE NEXT CHAPTER</span><span>13</span></div>
+          </footer>
+        </article>
+      </section>
+
+      <section class="reputation" id="dress-code" aria-labelledby="reputation-title">
+        <div class="reputation__transition" aria-hidden="true"></div>
+        <div class="reputation__paper-noise" aria-hidden="true"><span>THE NIGHT WILL MAKE HEADLINES<br>PRIVATE EDITION · AFTER DARK<br>THE NIGHT WILL MAKE HEADLINES<br>PRIVATE EDITION · AFTER DARK</span></div>
+        <svg class="reputation__snake" viewBox="0 0 120 320" fill="none" aria-hidden="true" focusable="false">
+          <path d="M76 4c-37 30-40 67-9 92 38 31 30 70-6 91-39 23-43 67-4 94 17 12 22 24 18 35"/>
+          <path d="m69 311 6 5 8-3"/>
+        </svg>
+
+        <div class="reputation__layout">
+          <header class="reputation__header">
+            <div class="reputation__masthead">
+              <p class="reputation__kicker">ARE YOU READY FOR IT?</p>
+              <span class="reputation__issue">THE AFTER DARK ISSUE</span>
+            </div>
+            <div class="reputation__cover">
+              <div class="reputation__cover-main">
+                <img src="assets/reputation-glam.avif" width="992" height="1841" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <div class="reputation__cover-title">
+                  <p class="reputation__edition">REPUTATION AFTER DARK</p>
+                  <h2 id="reputation-title"><span>DRESS</span> <span>CODE</span></h2>
+                </div>
+              </div>
+              <div class="reputation__cover-detail reputation__cover-detail--elegance"><img src="assets/reputation-dark-elegance.jpg" width="510" height="601" alt="" aria-hidden="true" loading="lazy" decoding="async"></div>
+              <div class="reputation__cover-detail reputation__cover-detail--rebel"><img src="assets/reputation-rebel.webp" width="2175" height="3263" alt="" aria-hidden="true" loading="lazy" decoding="async"></div>
+              <span class="reputation__cover-seal" aria-hidden="true">13</span>
+            </div>
+            <div class="reputation__brief">
+              <p class="reputation__intro">El negro será el protagonista de la noche. Puedes complementarlo con plata, brillos, rojo vino o detalles metálicos.</p>
+              <p class="reputation__tagline" lang="en">Dress like you’re about to make headlines.</p>
+            </div>
+          </header>
+
+          <div class="reputation__stage">
+            <button class="reputation__reveal" id="reveal-dress-code" type="button" aria-controls="reputation-reveal" aria-expanded="false">
+              <span>REVEAL THE DRESS CODE</span>
+              <svg viewBox="0 0 28 14" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M1 7h24m-6-5 6 5-6 5"/></svg>
+            </button>
+            <div class="reputation__doors" aria-hidden="true"><span><i>REPUTATION</i></span><span><i>AFTER DARK</i></span></div>
+
+            <div class="reputation__revealed" id="reputation-reveal">
+              <section class="reputation__palette" aria-labelledby="palette-title">
+                <div class="reputation__section-heading">
+                  <span>THE COLOR STORY</span>
+                  <h3 id="palette-title">THE NIGHT’S PALETTE</h3>
+                </div>
+                <div class="reputation__swatches" role="group" aria-label="Paleta del código de vestimenta">
+                  <button type="button" class="reputation__swatch is-selected" data-description="Color principal de la noche." aria-pressed="true">
+                    <span style="--swatch:#050505" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" focusable="false"><path d="m4 8 3 3 5-6"/></svg></span><b>BLACK</b>
+                  </button>
+                  <button type="button" class="reputation__swatch" data-description="Para accesorios, brillos y detalles metálicos." aria-pressed="false">
+                    <span style="--swatch:linear-gradient(135deg,#979b9f,#e3e1df 48%,#9b9da1)" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" focusable="false"><path d="m4 8 3 3 5-6"/></svg></span><b>SILVER</b>
+                  </button>
+                  <button type="button" class="reputation__swatch" data-description="Un acento opcional en rojo vino profundo." aria-pressed="false">
+                    <span style="--swatch:#661722" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" focusable="false"><path d="m4 8 3 3 5-6"/></svg></span><b>DEEP RED</b>
+                  </button>
+                  <button type="button" class="reputation__swatch" data-description="Una alternativa suave y elegante al negro." aria-pressed="false">
+                    <span style="--swatch:#3e4144" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" focusable="false"><path d="m4 8 3 3 5-6"/></svg></span><b>CHARCOAL</b>
+                  </button>
+                  <button type="button" class="reputation__swatch" data-description="Úsalo solamente en pequeños detalles de color." aria-pressed="false">
+                    <span style="--swatch:#0b573f" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" focusable="false"><path d="m4 8 3 3 5-6"/></svg></span><b>EMERALD ACCENT</b>
+                  </button>
+                </div>
+                <p class="reputation__color-note" id="palette-description" role="status">Black: color principal de la noche.</p>
+              </section>
+
+              <section class="reputation__looks" aria-labelledby="looks-title">
+                <div class="reputation__section-heading">
+                  <span>THE STYLE EDIT</span>
+                  <h3 id="looks-title">CHOOSE YOUR REPUTATION</h3>
+                </div>
+                <p class="reputation__swipe-hint">Desliza para descubrir más looks <svg viewBox="0 0 20 12" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M1 6h17m-5-4 4 4-4 4"/></svg></p>
+                <div class="reputation__look-track" role="region" tabindex="0" aria-label="Sugerencias de vestuario: desliza o usa las flechas para explorar">
+                  <article class="reputation__look">
+                    <figure><img src="assets/reputation-glam.avif" alt="Vestido negro de lentejuelas con accesorios plateados, referencia para Reputation Glam" width="992" height="1841" loading="lazy" decoding="async"></figure>
+                    <div><span>THE SPOTLIGHT</span><h4>REPUTATION GLAM</h4><p>Lentejuelas, brillos, accesorios plateados y maquillaje definido.</p></div>
+                  </article>
+                  <article class="reputation__look">
+                    <figure><img src="assets/reputation-dark-elegance.jpg" alt="Traje negro brillante de corte elegante, referencia para Dark Elegance" width="510" height="601" loading="lazy" decoding="async"></figure>
+                    <div><span>THE SILHOUETTE</span><h4>DARK ELEGANCE</h4><p>Vestido negro, traje oscuro, telas satinadas o un look elegante completamente negro.</p></div>
+                  </article>
+                  <article class="reputation__look">
+                    <figure><img src="assets/reputation-rebel.webp" alt="Abrigo oscuro y botas negras altas, referencia para Rebel Era" width="2175" height="3263" loading="lazy" decoding="async"></figure>
+                    <div><span>THE ATTITUDE</span><h4>REBEL ERA</h4><p>Chaqueta, botas, cuero sintético, transparencias moderadas o detalles metálicos.</p></div>
+                  </article>
+                </div>
+                <p class="reputation__advice">No necesitas copiar un atuendo exacto. Inspírate en la era y hazlo parte de tu propio estilo.</p>
+              </section>
+            </div>
+          </div>
+
+          <footer class="reputation__footer" aria-hidden="true">
+            <span>ALISON’S PRIVATE EDITION</span><strong>13</strong><span>REPUTATION AFTER DARK</span>
+          </footer>
+        </div>
+      </section>
+
+      <section class="red-memory" id="red-memory-archive" aria-labelledby="red-memory-title">
+        <div class="red-memory__transition" aria-hidden="true">
+          <svg viewBox="0 0 1440 150" preserveAspectRatio="none" focusable="false"><path d="M0 111C194 147 336 30 590 99s405 62 850-51V150H0Z"/></svg>
+        </div>
+        <svg class="red-memory__ribbon" viewBox="0 0 1200 1820" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path id="red-ribbon-line" d="M-60 80C178 8 232 243 470 155s231 70 472 18c152-33 191 90 300 128M-47 622c189-113 299 73 468 13s259-115 420 0 236 95 414-13M-46 1148c131-58 264 101 462 36s309-68 448 15 241 44 381-4M-51 1590c246-109 317 108 544 38s248-95 389-2 212 100 367 42" />
+        </svg>
+
+        <div class="red-memory__layout">
+          <header class="red-memory__header">
+            <div class="red-memory__fileline"><span>MEMORY FILE</span><span>RED MEMORY ARCHIVE</span></div>
+            <h2 id="red-memory-title">LOVING THESE<br><em>MEMORIES WAS RED</em></h2>
+            <p class="red-memory__lead">Cada fotografía guarda una parte de nuestra historia.</p>
+            <p class="red-memory__handwritten" lang="en">Remembering it all too well…</p>
+            <span class="red-memory__scarf" aria-hidden="true"></span>
+            <svg class="red-memory__leaf" viewBox="0 0 48 60" aria-hidden="true" focusable="false"><path d="M41 4C15 7 4 22 8 40c3 13 17 17 29 7C49 37 47 18 41 4ZM8 40c8-8 17-17 29-27"/></svg>
+          </header>
+
+          <p class="red-memory__instruction">Toca una fotografía para abrir el recuerdo.</p>
+          <div class="red-memory__gallery" id="red-memory-grid" aria-live="off"></div>
+
+          <section class="red-memory__film-section" aria-labelledby="red-film-title">
+            <div class="red-memory__section-line"><span>SELECTED FRAMES</span><h3 id="red-film-title">A LITTLE FILM OF US</h3></div>
+            <div class="red-memory__filmstrip" id="red-memory-filmstrip" tabindex="0" aria-label="Tira de película con recuerdos seleccionados"></div>
+          </section>
+
+          <section class="red-memory__one-more" aria-labelledby="red-one-more-title">
+            <button class="red-memory__final-card" id="red-one-more" type="button" aria-pressed="false" aria-describedby="red-one-more-description">
+              <span class="red-memory__final-front"><span>ONE MORE<br>MEMORY</span><small>TURN ME OVER</small></span>
+              <span class="red-memory__final-back" id="red-one-more-image" aria-hidden="true"></span>
+            </button>
+            <div class="red-memory__final-copy">
+              <p class="red-memory__stamp" aria-hidden="true">RED MEMORY ARCHIVE</p>
+              <h3 id="red-one-more-title">ONE MORE MEMORY</h3>
+              <p id="red-one-more-description">Una última Polaroid espera al final del álbum.</p>
+              <p class="red-memory__future" id="red-one-more-message" hidden>Los mejores recuerdos todavía están por escribirse.</p>
+            </div>
+          </section>
+
+          <footer class="red-memory__footer" aria-hidden="true"><span>ALISON’S MEMORY BOOK</span><span>13</span><span>KEEP THIS FOREVER</span></footer>
+        </div>
+
+      </section>
+    </main>
+    <div class="red-memory__dialog" id="red-memory-dialog" role="dialog" aria-modal="true" aria-labelledby="red-dialog-title" aria-describedby="red-dialog-note" hidden>
+      <div class="red-memory__dialog-backdrop" data-red-close></div>
+      <div class="red-memory__dialog-shell" role="document">
+        <button class="red-memory__dialog-close" type="button" data-red-close aria-label="Cerrar recuerdo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m5 5 14 14M19 5 5 19"/></svg>
+        </button>
+        <button class="red-memory__dialog-nav red-memory__dialog-prev" type="button" data-red-prev aria-label="Recuerdo anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m15 4-8 8 8 8"/></svg>
+        </button>
+        <figure class="red-memory__dialog-figure">
+          <div class="red-memory__dialog-image-wrap"><img id="red-dialog-image" alt="" hidden><div class="red-memory__dialog-placeholder" id="red-dialog-placeholder">FOTOGRAFÍA PENDIENTE</div></div>
+          <figcaption><span id="red-dialog-counter">01 / 10</span><h3 id="red-dialog-title">Un recuerdo por añadir</h3><p id="red-dialog-date"></p><p id="red-dialog-note"></p></figcaption>
+        </figure>
+        <button class="red-memory__dialog-nav red-memory__dialog-next" type="button" data-red-next aria-label="Siguiente recuerdo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m9 4 8 8-8 8"/></svg>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

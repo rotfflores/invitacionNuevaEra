@@ -1,0 +1,207 @@
+@font-face {
+  font-family: "Kalam";
+  src: url("assets/kalam-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  background: #a5d4e8;
+  color: #fff;
+  --exit-duration: 900ms;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; width: 100%; }
+html { overflow-x: clip; }
+body { overflow-x: hidden; }
+html:has(body.cover-open), body.cover-open { overflow: hidden; overscroll-behavior: none; }
+body.cover-open { position: fixed; inset: 0; }
+[hidden] { display: none !important; }
+
+.cover {
+  position: fixed;
+  inset: 0;
+  isolation: isolate;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: max(24px, env(safe-area-inset-top)) max(22px, env(safe-area-inset-right)) max(64px, calc(env(safe-area-inset-bottom) + 48px)) max(22px, env(safe-area-inset-left));
+  background: #a5d4e8 url("assets/1989-poster.jpg") 50% 46% / cover no-repeat;
+  opacity: 1;
+  transition: opacity var(--exit-duration) ease;
+}
+
+.cover__video, .cover__wash { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cover__video {
+  z-index: -3;
+  object-fit: cover;
+  object-position: 50% 46%;
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+.cover.is-playing .cover__video { opacity: 1; }
+.cover__wash {
+  z-index: -2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(133 202 227 / 4%) 12%, rgb(63 135 175 / 13%) 38%, rgb(31 104 150 / 28%) 68%, rgb(67 161 183 / 16%) 100%);
+}
+
+.cover__content {
+  width: min(100%, 920px);
+  text-align: center;
+  transform: translateY(7svh);
+  transition: opacity 500ms ease, transform 700ms ease;
+  text-shadow: 0 2px 15px rgb(18 63 95 / 48%), 0 1px 3px rgb(18 63 95 / 45%);
+}
+.cover__eyebrow {
+  margin: 0 0 16px;
+  font-size: clamp(10px, 2.6vw, 13px);
+  font-weight: 600;
+  letter-spacing: .42em;
+  padding-left: .42em;
+}
+.cover__title {
+  margin: 0;
+  font-family: "Kalam", "Segoe Print", cursive;
+  font-size: clamp(39px, 10.5vw, 106px);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -.055em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+.cover__message {
+  margin: 20px auto 30px;
+  max-width: 350px;
+  font-size: clamp(13px, 3.5vw, 16px);
+  font-weight: 450;
+  line-height: 1.75;
+  letter-spacing: .025em;
+  text-wrap: balance;
+}
+.invitation-ticket {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 62px;
+  max-width: 100%;
+  padding: 18px 26px 22px;
+  border: 1px solid rgb(255 255 255 / 80%);
+  border-bottom-width: 5px;
+  border-radius: 3px;
+  background: rgb(255 253 247 / 91%);
+  color: #286083;
+  box-shadow: 0 5px 20px rgb(25 80 113 / 17%);
+  font: 600 11px/1.5 "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  letter-spacing: .17em;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.invitation-ticket::before {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 12px;
+  top: -8px;
+  left: calc(50% - 21px);
+  background: rgb(165 221 222 / 72%);
+  transform: rotate(5deg);
+}
+.icon { display: inline-block; width: 18px; height: 18px; flex-shrink: 0; vertical-align: middle; }
+.invitation-ticket__star { color: #389ea9; width: 15px; height: 15px; }
+.sound-toggle {
+  position: absolute;
+  z-index: 1;
+  top: max(16px, calc(env(safe-area-inset-top) + 10px));
+  right: max(16px, calc(env(safe-area-inset-right) + 10px));
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid rgb(255 255 255 / 75%);
+  border-radius: 24px;
+  background: rgb(255 253 247 / 90%);
+  color: #286083;
+  font: 600 10px/1.4 "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  letter-spacing: .1em;
+  cursor: pointer;
+  box-shadow: 0 3px 15px rgb(25 80 113 / 12%);
+}
+.sound-toggle:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.sound-toggle__on, .sound-toggle[aria-pressed="true"] .sound-toggle__off { display: none; }
+.sound-toggle[aria-pressed="true"] .sound-toggle__on { display: initial; }
+.sound-status {
+  position: absolute;
+  top: max(64px, calc(env(safe-area-inset-top) + 58px));
+  right: max(16px, env(safe-area-inset-right));
+  max-width: min(260px, 80%);
+  margin: 0;
+  color: #286083;
+  background: rgb(255 253 247 / 95%);
+  border-radius: 4px;
+  font-size: 12px;
+}
+.sound-status:not(:empty) { padding: 8px 12px; }
+.invitation-ticket:focus-visible { outline: 3px solid #fff; outline-offset: 7px; }
+@media (hover: hover) {
+  .invitation-ticket:hover { transform: rotate(0deg) translateY(-2px); background: #fffdf7; box-shadow: 0 8px 24px rgb(25 80 113 / 22%); }
+}
+.invitation-ticket:active { transform: rotate(0deg); }
+.cover__hint {
+  position: absolute;
+  bottom: max(22px, calc(env(safe-area-inset-bottom) + 12px));
+  left: max(16px, env(safe-area-inset-left));
+  right: max(16px, env(safe-area-inset-right));
+  margin: 0;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .23em;
+  text-shadow: 0 1px 6px rgb(22 66 99 / 60%);
+}
+.cover__hint .icon { margin-left: 6px; color: #e4ffff; width: 10px; height: 10px; }
+.enter { animation: arrive 800ms both cubic-bezier(.2,.65,.3,1); }
+.enter--welcome { animation-delay: 350ms; }
+.enter--title { animation-delay: 650ms; }
+.enter--details { animation-delay: 1000ms; }
+@keyframes arrive { from { opacity: 0; translate: 0 12px; } to { opacity: 1; translate: 0 0; } }
+.cover.is-leaving { opacity: 0; pointer-events: none; }
+.cover.is-leaving .cover__content { opacity: 0; transform: translateY(calc(7svh - 8px)); }
+.cover.is-leaving .cover__hint { visibility: hidden; }
+#invitation-content { min-height: 100vh; min-height: 100dvh; outline: none; }
+
+@media (min-aspect-ratio: 1/1) {
+  .cover { background-position: 50% 43%; }
+  .cover__video { object-position: 50% 43%; }
+  .cover__content { transform: translateY(3svh); }
+}
+@media (max-width: 359px) {
+  .cover { padding-inline: max(14px, env(safe-area-inset-left)) max(14px, env(safe-area-inset-right)); }
+  .cover__title { font-size: 36px; }
+  .wide-break { display: none; }
+}
+@media (max-height: 560px) {
+  .cover__content { transform: none; }
+  .cover__eyebrow { margin-bottom: 8px; }
+  .cover__title { font-size: clamp(30px, 10vh, 55px); }
+  .cover__message { margin: 10px auto 18px; font-size: 12px; line-height: 1.45; }
+  .invitation-ticket { min-height: 46px; padding: 11px 22px 13px; }
+  .cover__hint { bottom: max(12px, env(safe-area-inset-bottom)); font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --exit-duration: 0ms; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .invitation-ticket:hover, .invitation-ticket:active { transform: rotate(-2deg); }
+}
