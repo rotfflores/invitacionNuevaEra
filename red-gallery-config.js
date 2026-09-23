@@ -14,6 +14,7 @@ window.RED_MEMORY_ARCHIVE = Object.freeze({
     { src: 'assets/alison-model-reference.jpg', alt: 'Modelo de referencia provisional para los recuerdos de Alison', title: 'Dancing around the kitchen', date: 'ADD DATE', note: 'La banda sonora está pendiente.', position: 'center 21%', shape: 'square' },
     { src: 'assets/alison-model-reference.jpg', alt: 'Modelo de referencia provisional para los recuerdos de Alison', title: 'A new chapter', date: 'ADD DATE', note: 'Guarda este espacio para una historia futura.', position: 'center 25%', shape: 'wide' },
   ],
+  // Recuerdo secreto número 13: configura aquí src, alt, title y position de la fotografía especial.
   special: {
     src: 'assets/alison-model-reference.jpg',
     alt: 'Modelo de referencia provisional para la Polaroid final de Alison',

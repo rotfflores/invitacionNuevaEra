@@ -8,6 +8,7 @@ const assert = require('node:assert/strict');
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('http://127.0.0.1:4173');
   await page.click('#open-invitation');
+  await page.locator('#invitation-cover').waitFor({ state: 'hidden' });
   await page.locator('#dress-code').scrollIntoViewIfNeeded();
 
   assert(await page.locator('#reveal-dress-code').isVisible());
@@ -23,7 +24,11 @@ const assert = require('node:assert/strict');
   assert.equal(await page.locator('.reputation__swatch').nth(2).getAttribute('aria-pressed'), 'true');
   assert.equal(await page.locator('.reputation__look').count(), 3);
   for (const image of await page.locator('.reputation__look img').all()) {
-    assert(await image.evaluate(img => img.complete && img.naturalWidth > 0));
+    assert(await image.evaluate(async img => {
+      img.loading = 'eager';
+      try { await img.decode(); } catch { /* The assertion below reports a missing file. */ }
+      return img.complete && img.naturalWidth > 0;
+    }));
   }
   assert.equal(await page.locator('body').evaluate(el => el.scrollWidth <= innerWidth), true);
   const track = page.locator('.reputation__look-track');

@@ -11,6 +11,7 @@ const assert = require('node:assert/strict');
     await page.clock.pauseAt(new Date('2026-12-14T00:59:55Z'));
     await page.goto('http://127.0.0.1:4173');
     await page.click('#open-invitation');
+    await page.locator('#invitation-cover').waitFor({ state: 'hidden' });
     await page.click('.midnights__discover');
     await page.waitForFunction(() => document.querySelector('#event-details').classList.contains('is-revealed'));
     assert.equal(await page.locator('#countdown-seconds').textContent(), '05');

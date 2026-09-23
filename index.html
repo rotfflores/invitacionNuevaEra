@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="reputation.css">
     <script src="reputation.js" defer></script>
     <link rel="stylesheet" href="red-gallery.css">
+    <link rel="preload" href="assets/red-book-fabric.webp" as="image">
+    <link rel="preload" href="assets/alison-model-reference.jpg" as="image">
     <script src="red-gallery-config.js" defer></script>
+    <script src="vendor/page-flip.browser.js" defer></script>
     <script src="red-gallery.js" defer></script>
   </head>
   <body class="cover-open">
@@ -80,6 +83,7 @@
         </a>
       </header>
       <section class="poets" id="event-details" tabindex="-1" aria-labelledby="poets-title">
+        <div class="poets__backdrop" aria-hidden="true"></div>
         <article class="poets__paper">
           <img class="poets__ink" src="assets/ink-stain.png" width="240" height="240" alt="" aria-hidden="true" loading="lazy" decoding="async">
           <img class="poets__flower" src="assets/pressed-flower.png" width="300" height="450" alt="" aria-hidden="true" loading="lazy" decoding="async">
@@ -160,6 +164,7 @@
 
       <section class="reputation" id="dress-code" aria-labelledby="reputation-title">
         <div class="reputation__transition" aria-hidden="true"></div>
+        <div class="reputation__backdrop" aria-hidden="true"></div>
         <div class="reputation__paper-noise" aria-hidden="true"><span>THE NIGHT WILL MAKE HEADLINES<br>PRIVATE EDITION · AFTER DARK<br>THE NIGHT WILL MAKE HEADLINES<br>PRIVATE EDITION · AFTER DARK</span></div>
         <svg class="reputation__snake" viewBox="0 0 120 320" fill="none" aria-hidden="true" focusable="false">
           <path d="M76 4c-37 30-40 67-9 92 38 31 30 70-6 91-39 23-43 67-4 94 17 12 22 24 18 35"/>
@@ -255,12 +260,36 @@
       </section>
 
       <section class="red-memory" id="red-memory-archive" aria-labelledby="red-memory-title">
+        <noscript>
+          <!-- La portada general depende de JavaScript: deja accesible este álbum estático. -->
+          <style>
+            html:has(body.cover-open), body.cover-open { overflow: auto !important; overscroll-behavior: auto; }
+            body.cover-open { position: static !important; }
+            #invitation-cover { display: none !important; }
+            #invitation-content[hidden] { display: block !important; }
+            #red-memory-archive .red-memory__flip-experience,
+            #red-memory-archive .red-memory__ambient, #red-memory-archive .red-memory__final-card,
+            #red-memory-archive .red-memory__secret-trigger, #red-memory-archive .red-memory__film-position,
+            #red-memory-archive #red-reveal-help { display: none !important; }
+            #red-memory-archive .red-memory__one-more { grid-template-columns: 1fr; }
+            #red-memory-archive #red-one-more-message[hidden] { display: block !important; }
+            #red-memory-archive .red-memory__fallback-special { display: block; max-width: 300px; margin: 20px auto; color: inherit; }
+            #red-memory-archive .red-memory__fallback-special img { display: block; width: 100%; height: auto; border: 10px solid #fffdf7; }
+          </style>
+        </noscript>
         <div class="red-memory__transition" aria-hidden="true">
           <svg viewBox="0 0 1440 150" preserveAspectRatio="none" focusable="false"><path d="M0 111C194 147 336 30 590 99s405 62 850-51V150H0Z"/></svg>
         </div>
+        <div class="red-memory__backdrop" aria-hidden="true"></div>
         <svg class="red-memory__ribbon" viewBox="0 0 1200 1820" preserveAspectRatio="none" aria-hidden="true" focusable="false">
           <path id="red-ribbon-line" d="M-60 80C178 8 232 243 470 155s231 70 472 18c152-33 191 90 300 128M-47 622c189-113 299 73 468 13s259-115 420 0 236 95 414-13M-46 1148c131-58 264 101 462 36s309-68 448 15 241 44 381-4M-51 1590c246-109 317 108 544 38s248-95 389-2 212 100 367 42" />
         </svg>
+        <div class="red-memory__ambient" aria-hidden="true">
+          <svg class="red-memory__ambient-leaf" viewBox="0 0 48 60" focusable="false"><path d="M41 4C15 7 4 22 8 40c3 13 17 17 29 7C49 37 47 18 41 4ZM8 40c8-8 17-17 29-27"/></svg>
+          <svg class="red-memory__ambient-leaf" viewBox="0 0 48 60" focusable="false"><path d="M38 7C13 10 4 26 10 42c5 12 18 15 29 3C47 35 44 19 38 7ZM10 42 35 16"/></svg>
+          <svg class="red-memory__ambient-leaf" viewBox="0 0 48 60" focusable="false"><path d="M41 4C15 7 4 22 8 40c3 13 17 17 29 7C49 37 47 18 41 4ZM8 40c8-8 17-17 29-27"/></svg>
+          <svg class="red-memory__ambient-leaf" viewBox="0 0 48 60" focusable="false"><path d="M38 7C13 10 4 26 10 42c5 12 18 15 29 3C47 35 44 19 38 7ZM10 42 35 16"/></svg>
+        </div>
 
         <div class="red-memory__layout">
           <header class="red-memory__header">
@@ -272,12 +301,99 @@
             <svg class="red-memory__leaf" viewBox="0 0 48 60" aria-hidden="true" focusable="false"><path d="M41 4C15 7 4 22 8 40c3 13 17 17 29 7C49 37 47 18 41 4ZM8 40c8-8 17-17 29-27"/></svg>
           </header>
 
+          <section class="red-memory__flip-experience" aria-label="Libro fotográfico de Alison">
+            <div class="red-memory__flip-light" aria-hidden="true"></div>
+            <div class="red-memory__flip-host" id="red-flip-host" aria-label="THE RED MEMORY BOOK" aria-busy="true"></div>
+            <div class="red-memory__flip-controls" aria-label="Controles del libro">
+              <button id="red-flip-prev" type="button" aria-label="Página anterior" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m15 4-8 8 8 8"/></svg><span>Página anterior</span>
+              </button>
+              <output id="red-flip-counter" aria-live="polite">Portada</output>
+              <button id="red-flip-next" type="button" aria-label="Página siguiente" disabled>
+                <span>Página siguiente</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m9 4 8 8-8 8"/></svg>
+              </button>
+            </div>
+            <button class="red-memory__flip-close" id="red-flip-close" type="button" hidden>Cerrar libro</button>
+            <a class="red-memory__flip-continue" href="#red-memory-end">Continuar con la invitación
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m12 4 0 16m-7-7 7 7 7-7"/></svg>
+            </a>
+            <p class="red-memory__flip-error" id="red-flip-error" hidden>El libro no está disponible. Los recuerdos siguen accesibles debajo.</p>
+          </section>
+
+          <div class="red-memory__book" id="red-memory-book" hidden>
+            <div class="red-memory__book-pages" id="red-book-pages" aria-hidden="true" hidden>
+              <div class="red-memory__book-spread" id="red-book-spread" aria-live="polite" aria-atomic="true"></div>
+              <div class="red-memory__book-navigation">
+                <button id="red-book-prev" type="button" aria-label="Páginas anteriores" aria-controls="red-book-spread">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m15 4-8 8 8 8"/></svg>
+                </button>
+                <output id="red-book-counter" aria-label="Páginas del libro">01 / 10</output>
+                <button id="red-book-next" type="button" aria-label="Páginas siguientes" aria-controls="red-book-spread">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m9 4 8 8-8 8"/></svg>
+                </button>
+              </div>
+              <a class="red-memory__book-gallery-link" href="#red-memory-grid">Ver todas las fotografías</a>
+            </div>
+            <div class="red-memory__book-cover">
+              <span class="red-memory__book-kicker">ALISON’S MEMORY ARCHIVE</span>
+              <h3 class="red-memory__book-title">THE RED MEMORY BOOK</h3>
+              <p class="red-memory__book-description">Una colección de momentos que nunca queremos olvidar.</p>
+              <button id="open-red-memories" type="button" aria-controls="red-book-pages red-album-pages" aria-expanded="false">
+                <span>OPEN THE MEMORIES</span>
+                <svg viewBox="0 0 28 14" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M1 7h24m-6-5 6 5-6 5"/></svg>
+              </button>
+              <small class="red-memory__book-number" aria-hidden="true">13</small>
+              <span class="red-memory__book-ribbon" aria-hidden="true"></span>
+            </div>
+          </div>
+          <p class="red-memory__sr-only" id="red-memory-status" role="status" aria-live="polite"></p>
+          <div id="red-album-pages" aria-label="Fotografías de respaldo">
           <p class="red-memory__instruction">Toca una fotografía para abrir el recuerdo.</p>
-          <div class="red-memory__gallery" id="red-memory-grid" aria-live="off"></div>
+          <p class="red-memory__sr-only" id="red-reveal-help">Para revelar una fotografía, mantén presionado o usa Enter o Espacio. Después, tócala para abrir el visor.</p>
+          <!-- Fotografías estáticas para navegación sin JavaScript. Los datos interactivos se configuran en red-gallery-config.js. -->
+          <div class="red-memory__gallery" id="red-memory-grid" aria-live="off">
+            <a class="red-memory__polaroid red-memory__polaroid--0" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: A memory waiting to happen">
+              <figure><div class="red-memory__photo" style="--memory-position: center 22%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>A memory waiting to happen</strong><span>ADD DATE</span><small>Aquí puede vivir una primera aventura.</small></figcaption></figure>
+            </a>
+            <a class="red-memory__polaroid red-memory__polaroid--1" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: The little things">
+              <figure><div class="red-memory__photo" style="--memory-position: center 28%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>The little things</strong><span>ADD DATE</span><small>Una risa que merece quedarse.</small></figcaption></figure>
+            </a>
+            <a class="red-memory__polaroid red-memory__polaroid--2" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: Golden hour">
+              <figure><div class="red-memory__photo" style="--memory-position: center 20%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>Golden hour</strong><span>ADD DATE</span><small>Un día para volver a mirar.</small></figcaption></figure>
+            </a>
+            <a class="red-memory__polaroid red-memory__polaroid--3" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: Long story short">
+              <figure><div class="red-memory__photo" style="--memory-position: center 25%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>Long story short</strong><span>ADD DATE</span><small>El inicio de otra buena historia.</small></figcaption></figure>
+            </a>
+            <a class="red-memory__polaroid red-memory__polaroid--4" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: Autumn leaves">
+              <figure><div class="red-memory__photo" style="--memory-position: center 30%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>Autumn leaves</strong><span>ADD DATE</span><small>El tipo de tarde que se queda.</small></figcaption></figure>
+            </a>
+            <a class="red-memory__polaroid red-memory__polaroid--5" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: A little detour">
+              <figure><div class="red-memory__photo" style="--memory-position: center 24%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>A little detour</strong><span>ADD DATE</span><small>Una página fuera del itinerario.</small></figcaption></figure>
+            </a>
+            <a class="red-memory__polaroid red-memory__polaroid--6" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: The best kind of chaos">
+              <figure><div class="red-memory__photo" style="--memory-position: center 19%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>The best kind of chaos</strong><span>ADD DATE</span><small>Un recuerdo para contar mil veces.</small></figcaption></figure>
+            </a>
+            <a class="red-memory__polaroid red-memory__polaroid--7" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: Stay beautiful">
+              <figure><div class="red-memory__photo" style="--memory-position: center 28%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>Stay beautiful</strong><span>ADD DATE</span><small>Una escena que merece marco.</small></figcaption></figure>
+            </a>
+            <a class="red-memory__polaroid red-memory__polaroid--8" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: Dancing around the kitchen">
+              <figure><div class="red-memory__photo" style="--memory-position: center 21%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>Dancing around the kitchen</strong><span>ADD DATE</span><small>La banda sonora está pendiente.</small></figcaption></figure>
+            </a>
+            <a class="red-memory__polaroid red-memory__polaroid--9" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: A new chapter">
+              <figure><div class="red-memory__photo" style="--memory-position: center 25%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><figcaption><strong>A new chapter</strong><span>ADD DATE</span><small>Guarda este espacio para una historia futura.</small></figcaption></figure>
+            </a>
+          </div>
 
           <section class="red-memory__film-section" aria-labelledby="red-film-title">
             <div class="red-memory__section-line"><span>SELECTED FRAMES</span><h3 id="red-film-title">A LITTLE FILM OF US</h3></div>
-            <div class="red-memory__filmstrip" id="red-memory-filmstrip" tabindex="0" aria-label="Tira de película con recuerdos seleccionados"></div>
+            <p class="red-memory__film-hint"><span>Desliza la película para recorrer los recuerdos</span><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M1 7h21m-6-5 6 5-6 5"/></svg></p>
+            <div class="red-memory__filmstrip" id="red-memory-filmstrip" tabindex="0" aria-label="Tira de película con recuerdos seleccionados">
+              <a class="red-memory__film-button" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: The little things"><span class="red-memory__film-hole" aria-hidden="true"></span><div class="red-memory__photo" style="--memory-position: center 28%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><small>ADD DATE</small></a>
+              <a class="red-memory__film-button" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: Long story short"><span class="red-memory__film-hole" aria-hidden="true"></span><div class="red-memory__photo" style="--memory-position: center 25%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><small>ADD DATE</small></a>
+              <a class="red-memory__film-button" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: The best kind of chaos"><span class="red-memory__film-hole" aria-hidden="true"></span><div class="red-memory__photo" style="--memory-position: center 19%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><small>ADD DATE</small></a>
+              <a class="red-memory__film-button" href="assets/alison-model-reference.jpg" aria-label="Abrir recuerdo: Dancing around the kitchen"><span class="red-memory__film-hole" aria-hidden="true"></span><div class="red-memory__photo" style="--memory-position: center 21%"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para los recuerdos de Alison" loading="lazy" decoding="async"></div><small>ADD DATE</small></a>
+            </div>
+            <output class="red-memory__film-position" id="red-film-position" aria-label="Posición en la tira de película" aria-live="polite">01 / 04</output>
           </section>
 
           <section class="red-memory__one-more" aria-labelledby="red-one-more-title">
@@ -290,10 +406,17 @@
               <h3 id="red-one-more-title">ONE MORE MEMORY</h3>
               <p id="red-one-more-description">Una última Polaroid espera al final del álbum.</p>
               <p class="red-memory__future" id="red-one-more-message" hidden>Los mejores recuerdos todavía están por escribirse.</p>
+              <button class="red-memory__secret-close" id="red-secret-close" type="button" aria-label="Cerrar recuerdo secreto" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+                <span>Cerrar recuerdo secreto</span>
+              </button>
+              <noscript><a class="red-memory__fallback-special" href="assets/alison-model-reference.jpg"><img src="assets/alison-model-reference.jpg" alt="Modelo de referencia provisional para la Polaroid final de Alison" loading="lazy" decoding="async"></a></noscript>
             </div>
           </section>
 
-          <footer class="red-memory__footer" aria-hidden="true"><span>ALISON’S MEMORY BOOK</span><span>13</span><span>KEEP THIS FOREVER</span></footer>
+          <footer class="red-memory__footer"><span>ALISON’S MEMORY BOOK</span><button class="red-memory__secret-trigger" id="red-secret-trigger" type="button" aria-label="Descubrir el recuerdo secreto número 13" aria-controls="red-one-more" aria-expanded="false">13</button><span>KEEP THIS FOREVER</span></footer>
+          </div>
+          <div class="red-memory__flip-end" id="red-memory-end" aria-hidden="true"></div>
         </div>
 
       </section>
@@ -308,8 +431,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m15 4-8 8 8 8"/></svg>
         </button>
         <figure class="red-memory__dialog-figure">
-          <div class="red-memory__dialog-image-wrap"><img id="red-dialog-image" alt="" hidden><div class="red-memory__dialog-placeholder" id="red-dialog-placeholder">FOTOGRAFÍA PENDIENTE</div></div>
-          <figcaption><span id="red-dialog-counter">01 / 10</span><h3 id="red-dialog-title">Un recuerdo por añadir</h3><p id="red-dialog-date"></p><p id="red-dialog-note"></p></figcaption>
+          <div class="red-memory__dialog-image-wrap"><img id="red-dialog-image" alt="" decoding="async" hidden><div class="red-memory__dialog-placeholder" id="red-dialog-placeholder">FOTOGRAFÍA PENDIENTE</div></div>
+          <figcaption aria-live="polite" aria-atomic="true"><span id="red-dialog-counter">01 / 10</span><h3 id="red-dialog-title">Un recuerdo por añadir</h3><p id="red-dialog-date"></p><p id="red-dialog-note"></p></figcaption>
         </figure>
         <button class="red-memory__dialog-nav red-memory__dialog-next" type="button" data-red-next aria-label="Siguiente recuerdo">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m9 4 8 8-8 8"/></svg>

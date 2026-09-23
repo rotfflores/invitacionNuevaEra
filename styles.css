@@ -9,15 +9,16 @@
 :root {
   color-scheme: light;
   font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
-  background: #a5d4e8;
+  background: #4b1719;
   color: #fff;
   --exit-duration: 900ms;
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; min-height: 100%; width: 100%; }
+html, body { margin: 0; min-height: 100%; min-height: 100vh; min-height: 100dvh; width: 100%; background: #4b1719; }
 html { overflow-x: clip; }
-body { overflow-x: hidden; }
+body { overflow-x: clip; }
+html:has(body.cover-open), body.cover-open { background: #a5d4e8; }
 html:has(body.cover-open), body.cover-open { overflow: hidden; overscroll-behavior: none; }
 body.cover-open { position: fixed; inset: 0; }
 [hidden] { display: none !important; }

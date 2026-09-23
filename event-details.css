@@ -154,3 +154,22 @@
 @media (prefers-reduced-motion: reduce) {
   .poets *, .poets *::before, .poets *::after { animation: none !important; transition: none !important; }
 }
+
+/* The supplied archive paper stays within this chapter as it scrolls. */
+#event-details.poets { position: relative; isolation: isolate; overflow: clip; background: #e8e0d5; }
+.poets__backdrop {
+  position: sticky;
+  z-index: 0;
+  top: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+  margin: -28px 0 calc(-100vh + 28px) calc(50% - 50vw);
+  margin-bottom: calc(-100svh + 28px);
+  margin-bottom: calc(-100dvh + 28px);
+  background: url("assets/ttpd-archive-background.webp") center center / cover no-repeat;
+  pointer-events: none;
+}
+.poets__paper { z-index: 1; background: rgb(246 242 233 / 88%); }
