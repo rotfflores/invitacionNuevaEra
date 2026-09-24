@@ -206,3 +206,6 @@ body.cover-open { position: fixed; inset: 0; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .invitation-ticket:hover, .invitation-ticket:active { transform: rotate(-2deg); }
 }
+
+/* Album logos used in place of era names inside titles. */
+.era-logo { display: inline-block; width: auto; max-width: 100%; vertical-align: middle; }

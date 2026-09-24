@@ -267,3 +267,15 @@
 }
 .reputation__layout { position: relative; z-index: 1; }
 
+
+/* Reputation logo replaces the word inside titles (white version for the dark section). */
+.reputation__logo { height: 1.1em; vertical-align: -.2em; }
+.reputation__edition .reputation__logo { display: block; height: 30px; margin-bottom: 6px; }
+.reputation__section-heading h3 .reputation__logo { height: 1.15em; vertical-align: -.22em; }
+.reputation__look h4 .reputation__logo { height: 1.05em; vertical-align: -.2em; }
+.reputation__doors i .reputation__logo { height: 1em; vertical-align: top; }
+.reputation__footer .reputation__logo { height: 1.8em; vertical-align: -.55em; }
+@media (max-width: 700px) {
+  .reputation__edition .reputation__logo { height: 24px; }
+}
+.reputation img.era-logo { width: auto; max-width: 100%; object-fit: contain; }

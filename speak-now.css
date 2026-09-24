@@ -1,0 +1,69 @@
+.speak-rsvp { position: relative; isolation: isolate; overflow: hidden; overflow: clip; color: #f8eefa; background: linear-gradient(rgb(49 18 65 / 65%),rgb(28 17 47 / 91%)), url('assets/speak-now-background.webp') center/cover; }
+.speak-rsvp [hidden] { display: none !important; }
+.speak-rsvp__inner { width: min(1050px,100% - 44px); margin: auto; padding: 44px 0 42px; }
+.speak-rsvp__header { text-align: center; margin: auto auto 24px; max-width: 600px; }
+.speak-rsvp__eyebrow { font: 10px/1.5 'Courier New',monospace; letter-spacing: .23em; color: #e8cba3; }
+.speak-rsvp h2 { margin: 16px 0; font: 400 19px/1.3 Georgia,serif; letter-spacing: .1em; }
+.speak-rsvp h2 img { display: block; width: min(360px,95%); height: auto; margin: 12px auto 0; }
+.speak-rsvp__header > p:last-child { margin: 12px 0; font: 16px/1.5 Georgia,serif; }
+.speak-rsvp__layout { display: grid; grid-template-columns: minmax(0,1fr); align-items: start; gap: 28px; }
+.speak-rsvp__scene { width: min(100%,400px); margin: auto; text-align: center; }
+.speak-rsvp__stage { position: relative; height: 258px; overflow: hidden; border: 1px solid #b29768; border-radius: 100px 100px 5px 5px; background: radial-gradient(ellipse at 50% 0,#a382ad,#21102f 73%); box-shadow: 0 12px 35px rgb(15 8 28 / 25%); }
+.speak-rsvp__stage::after { content:''; position:absolute; inset:auto 0 0; height:25px; background:linear-gradient(transparent,#241330); pointer-events:none; }
+.speak-rsvp__portrait { position: absolute; inset:0; height: 100%; width: 100%; object-fit: cover; object-position: center top; opacity: .88; }
+.speak-rsvp button { font-family:'Courier New',monospace; cursor:pointer; }
+.speak-rsvp__primary { min-height:46px; padding:12px 22px; border:1px solid #d9bb83; border-radius:3px; color:#fbf0da; background:#603770; font-size:11px; font-weight:bold; letter-spacing:.09em; }
+.speak-rsvp__scene > .speak-rsvp__primary { margin-top:18px; }
+.speak-rsvp__deadline { font:12px/1.5 Georgia,serif; margin:12px 0 8px; color:#ecdbef; }
+.speak-rsvp__credit { display:block; font:9px/1.5 Georgia,serif; color:#cebcd6; }.speak-rsvp a { color:inherit; text-underline-offset:3px; }
+.speak-rsvp__form { position:relative; padding:26px; border:0; border-radius:5px; background:rgb(34 18 51 / 91%); box-shadow:0 10px 30px rgb(19 8 38 / 18%); animation:speak-reveal 550ms both; }
+.speak-rsvp__pass { display:flex; justify-content:space-between; border-bottom:1px solid #8a6d55; padding-bottom:16px; margin:0 0 22px; color:#dfc698; font:10px/1.3 'Courier New',monospace; letter-spacing:.13em; }
+.speak-rsvp__form label, .speak-rsvp legend, #speak-count-label { display:block; margin:0 0 8px; font:700 10px/1.5 'Courier New',monospace; letter-spacing:.045em; color:#f0ddec; }
+.speak-rsvp__form label small { font-size:8px; color:#c0accd; font-weight:normal; margin-left:5px; }
+.speak-rsvp input:not([type=radio]), .speak-rsvp textarea { width:100%; box-sizing:border-box; min-height:46px; padding:11px 12px; color:#f8eff6; border:1px solid #80658f; border-radius:3px; background:#382543; font:16px/1.4 Georgia,serif; scroll-margin-block:90px; }
+.speak-rsvp textarea { resize:vertical; }.speak-rsvp input::placeholder,.speak-rsvp textarea::placeholder { color:#c6b6d0; opacity:1; }
+.speak-rsvp fieldset { padding:0; margin:16px 0; border:0; min-width:0; }.speak-rsvp__choices { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.speak-rsvp__choices label { display:flex; align-items:center; gap:8px; min-height:48px; margin:0; padding:9px; border:1px solid #80658f; border-radius:3px; cursor:pointer; box-sizing:border-box; }
+.speak-rsvp__choices label:has(input:checked) { border-color:#e4c78c; background:#573361; box-shadow:inset 0 0 12px rgb(200 154 227 / 12%); }.speak-rsvp input[type=radio] { accent-color:#ddbe85; width:17px; height:17px; flex-shrink:0; }
+.speak-rsvp__error { color:#ffd6c9; font:12px/1.4 Georgia,serif; margin:5px 0 0; }.speak-rsvp__error:empty { display:none; }
+.speak-rsvp__guests { margin:0 0 18px; }.speak-rsvp__stepper { display:flex; align-items:center; gap:18px; }.speak-rsvp__stepper button { width:44px; height:44px; border:1px solid #bca075; background:#44304f; color:#f9ead1; border-radius:50%; }.speak-rsvp__stepper svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5; }.speak-rsvp__stepper output { min-width:20px; text-align:center; font:24px Georgia,serif; }.speak-rsvp button:disabled { opacity:.4; cursor:default; }
+.speak-rsvp__count { display:block; text-align:right; font:10px/1.5 'Courier New',monospace; color:#cbb8d2; margin:3px 0 16px; }
+.speak-rsvp__response-note { margin:15px 0; font:italic 14px/1.5 Georgia,serif; color:#ead2ee; }.speak-rsvp__response-note:empty { display:none; }
+.speak-rsvp__form > .speak-rsvp__primary { display:block; width:100%; margin-top:20px; }.speak-rsvp__secondary { min-height:44px; padding:10px 12px; background:transparent; color:#e5c99a; border:0; text-decoration:underline; text-underline-offset:4px; font-size:10px; }
+.speak-rsvp__status { font:14px/1.5 Georgia,serif; margin:5px 0 0; }.speak-rsvp__return { max-width:560px; margin:24px auto 0; text-align:center; font:15px/1.5 Georgia,serif; animation:speak-reveal 550ms both; }
+.speak-rsvp__return:focus { outline:none; }
+.speak-rsvp__thanks { margin:0 0 6px; color:#f3dcb4; font:italic 26px/1.25 Georgia,serif; }
+.speak-rsvp__thanks-note { margin:0 0 10px; color:#ecdbef; }
+.speak-rsvp__thanks-note:empty { display:none; }
+.speak-rsvp__preview { max-width:550px; padding:20px; margin:16px auto 0; border:1px solid #967c58; background:#30203e; white-space:pre-wrap; overflow-wrap:anywhere; font:14px/1.6 Georgia,serif; }
+.speak-rsvp__sparks { position:relative; pointer-events:none; }.speak-rsvp__sparks i { position:absolute; width:7px; height:7px; background:#e8c589; opacity:0; left:20%; clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%); }.speak-rsvp__sparks i:nth-child(2) { left:40%; }.speak-rsvp__sparks i:nth-child(3) { left:60%; }.speak-rsvp__sparks i:nth-child(4) { left:80%; }.speak-rsvp.is-sparkling .speak-rsvp__sparks i { animation:speak-spark 800ms both; animation-play-state:paused; }.speak-rsvp.is-visible.is-sparkling .speak-rsvp__sparks i { animation-play-state:running; }
+.speak-rsvp :focus-visible { outline:2px solid #f0ce95; outline-offset:4px; }
+@keyframes speak-reveal { from { opacity:0; transform:translateY(9px); } to { opacity:1; transform:none; } }@keyframes speak-spark { 20% { opacity:.8; } to { opacity:0; transform:translateY(-25px); } }
+@media(min-width:800px) { .speak-rsvp.is-open .speak-rsvp__layout { grid-template-columns:minmax(0, .85fr) minmax(0,1.15fr); }.speak-rsvp.is-open .speak-rsvp__scene { position:sticky; top:40px; } }
+@media(max-width:700px) { .speak-rsvp__header { margin-bottom:18px; }.speak-rsvp__form { padding:20px 16px; }.speak-rsvp__choices { grid-template-columns:1fr; }.speak-rsvp__stage { height:220px; }.speak-rsvp__inner { padding-bottom:max(28px,env(safe-area-inset-bottom)); }.speak-rsvp h2 img { max-width:300px; } }
+@media(prefers-reduced-motion:reduce) { .speak-rsvp *, .speak-rsvp *::before,.speak-rsvp *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
+
+/* Velvet curtain: two transparent halves gathered with GSAP (speak-now.js). */
+.speak-rsvp__stage { isolation:isolate; }
+.speak-rsvp__light { position:absolute; z-index:1; inset:0; background:radial-gradient(ellipse at 50% 12%,rgb(255 226 176 / 32%),transparent 62%); opacity:0; pointer-events:none; }
+.speak-rsvp__curtain { position:absolute; z-index:2; top:0; bottom:-2px; width:51.5%; pointer-events:none; }
+.speak-rsvp__curtain--left { left:0; transform-origin:0 0; }
+.speak-rsvp__curtain--right { right:0; transform-origin:100% 0; }
+.speak-rsvp__drape { position:absolute; inset:0; }
+.speak-rsvp__curtain--left .speak-rsvp__drape { transform-origin:0 0; }.speak-rsvp__curtain--right .speak-rsvp__drape { transform-origin:100% 0; }
+.speak-rsvp__drape img { display:block; width:100%; height:100%; object-fit:fill; }
+.speak-rsvp__fold { position:absolute; top:0; bottom:9%; width:18%; opacity:.6; pointer-events:none; background:linear-gradient(90deg,transparent,rgb(255 214 255 / 10%) 38%,rgb(255 230 255 / 16%) 48%,rgb(18 0 28 / 26%) 78%,transparent); }
+.speak-rsvp__fold:nth-child(2) { left:2%; }.speak-rsvp__fold:nth-child(3) { left:21%; }.speak-rsvp__fold:nth-child(4) { left:40%; }.speak-rsvp__fold:nth-child(5) { left:59%; }.speak-rsvp__fold:nth-child(6) { left:78%; }
+.speak-rsvp__curtain--left .speak-rsvp__drape { box-shadow:inset -14px 0 18px -8px rgb(10 0 16 / 70%); }
+.speak-rsvp__curtain--right .speak-rsvp__drape { box-shadow:inset 14px 0 18px -8px rgb(10 0 16 / 70%); }
+.speak-rsvp__seam { position:absolute; z-index:3; top:0; bottom:0; left:calc(50% - 16px); width:32px; background:linear-gradient(90deg,transparent,rgb(8 0 14 / 72%) 50%,transparent); pointer-events:none; }
+.speak-rsvp__toggle { position:absolute; z-index:6; inset:0; width:100%; height:100%; padding:0; border:0; border-radius:inherit; background:transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+.speak-rsvp__toggle:focus-visible { outline-offset:-5px; }
+.speak-rsvp.is-animating .speak-rsvp__toggle { cursor:progress; }
+
+/* Lover casts a soft shadow onto Speak Now instead of blending into it. */
+.speak-rsvp { box-shadow: inset 0 30px 32px -22px rgb(10 2 18 / 85%), inset 0 7px 9px -5px rgb(10 2 18 / 70%); }
+@media(max-width:700px) { .speak-rsvp__inner { padding-top:30px; } }
+
+/* Subtle hint in the middle of the closed curtain (replaces mic, stars and numeral). */
+.speak-rsvp__hint { position:absolute; z-index:4; left:50%; top:50%; transform:translate(-50%,-50%); padding:9px 16px; border-top:1px solid rgb(226 196 144 / 45%); border-bottom:1px solid rgb(226 196 144 / 45%); background:rgb(22 8 32 / 42%); color:rgb(246 230 204 / 88%); font:10px/1.4 'Courier New',monospace; letter-spacing:.2em; text-transform:uppercase; white-space:nowrap; pointer-events:none; }

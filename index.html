@@ -21,6 +21,16 @@
     <script src="red-gallery-config.js" defer></script>
     <script src="vendor/page-flip.browser.js" defer></script>
     <script src="red-gallery.js" defer></script>
+    <link rel="stylesheet" href="lover-gifts.css">
+    <script src="lover-gifts-config.js" defer></script>
+    <script src="lover-gifts.js" defer></script>
+    <link rel="stylesheet" href="speak-now.css">
+    <script src="speak-now-config.js" defer></script>
+    <script src="js/vendor/gsap.min.js" defer></script>
+    <script src="speak-now.js" defer></script>
+    <link rel="stylesheet" href="showgirl.css">
+    <script src="showgirl-config.js" defer></script>
+    <script src="showgirl.js" defer></script>
   </head>
   <body class="cover-open">
     <section class="cover" id="invitation-cover" aria-labelledby="era-title">
@@ -71,7 +81,7 @@
         </div>
         <div class="midnights__gradient" aria-hidden="true"></div>
         <div class="midnights__copy">
-          <p class="midnights__eyebrow midnight-enter midnight-enter--intro">MEET ME AT MIDNIGHT</p>
+          <p class="midnights__eyebrow midnight-enter midnight-enter--intro">MEET ME AT <img class="era-logo midnights__logo" src="assets/logo-midnights.webp" width="837" height="188" alt="Midnights" decoding="async"></p>
           <h2 class="midnights__name midnight-enter midnight-enter--name" id="midnights-name">Alison</h2>
           <!-- Datos pendientes: sustituir edad y fecha cuando se confirmen. -->
           <p class="midnights__era midnight-enter midnight-enter--date">IS ENTERING HER [EDAD] ERA</p>
@@ -181,7 +191,7 @@
               <div class="reputation__cover-main">
                 <img src="assets/reputation-glam.avif" width="992" height="1841" alt="" aria-hidden="true" loading="lazy" decoding="async">
                 <div class="reputation__cover-title">
-                  <p class="reputation__edition">REPUTATION AFTER DARK</p>
+                  <p class="reputation__edition"><img class="era-logo reputation__logo" src="assets/logo-reputation.webp" width="1000" height="232" alt="Reputation" decoding="async"> AFTER DARK</p>
                   <h2 id="reputation-title"><span>DRESS</span> <span>CODE</span></h2>
                 </div>
               </div>
@@ -200,7 +210,7 @@
               <span>REVEAL THE DRESS CODE</span>
               <svg viewBox="0 0 28 14" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M1 7h24m-6-5 6 5-6 5"/></svg>
             </button>
-            <div class="reputation__doors" aria-hidden="true"><span><i>REPUTATION</i></span><span><i>AFTER DARK</i></span></div>
+            <div class="reputation__doors" aria-hidden="true"><span><i><img class="era-logo reputation__logo" src="assets/logo-reputation.webp" width="1000" height="232" alt="" decoding="async"></i></span><span><i>AFTER DARK</i></span></div>
 
             <div class="reputation__revealed" id="reputation-reveal">
               <section class="reputation__palette" aria-labelledby="palette-title">
@@ -231,13 +241,13 @@
               <section class="reputation__looks" aria-labelledby="looks-title">
                 <div class="reputation__section-heading">
                   <span>THE STYLE EDIT</span>
-                  <h3 id="looks-title">CHOOSE YOUR REPUTATION</h3>
+                  <h3 id="looks-title">CHOOSE YOUR <img class="era-logo reputation__logo" src="assets/logo-reputation.webp" width="1000" height="232" alt="Reputation" decoding="async"></h3>
                 </div>
                 <p class="reputation__swipe-hint">Desliza para descubrir más looks <svg viewBox="0 0 20 12" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M1 6h17m-5-4 4 4-4 4"/></svg></p>
                 <div class="reputation__look-track" role="region" tabindex="0" aria-label="Sugerencias de vestuario: desliza o usa las flechas para explorar">
                   <article class="reputation__look">
                     <figure><img src="assets/reputation-glam.avif" alt="Vestido negro de lentejuelas con accesorios plateados, referencia para Reputation Glam" width="992" height="1841" loading="lazy" decoding="async"></figure>
-                    <div><span>THE SPOTLIGHT</span><h4>REPUTATION GLAM</h4><p>Lentejuelas, brillos, accesorios plateados y maquillaje definido.</p></div>
+                    <div><span>THE SPOTLIGHT</span><h4><img class="era-logo reputation__logo" src="assets/logo-reputation.webp" width="1000" height="232" alt="Reputation" decoding="async"> GLAM</h4><p>Lentejuelas, brillos, accesorios plateados y maquillaje definido.</p></div>
                   </article>
                   <article class="reputation__look">
                     <figure><img src="assets/reputation-dark-elegance.jpg" alt="Traje negro brillante de corte elegante, referencia para Dark Elegance" width="510" height="601" loading="lazy" decoding="async"></figure>
@@ -254,7 +264,7 @@
           </div>
 
           <footer class="reputation__footer" aria-hidden="true">
-            <span>ALISON’S PRIVATE EDITION</span><strong>13</strong><span>REPUTATION AFTER DARK</span>
+            <span>ALISON’S PRIVATE EDITION</span><strong>13</strong><span><img class="era-logo reputation__logo" src="assets/logo-reputation.webp" width="1000" height="232" alt="" decoding="async"> AFTER DARK</span>
           </footer>
         </div>
       </section>
@@ -420,7 +430,125 @@
         </div>
 
       </section>
+      <section class="lover-gifts" id="lover-gifts" aria-labelledby="lover-gifts-title">
+        <svg class="lover-gifts__decor" viewBox="0 0 900 600" fill="none" aria-hidden="true" focusable="false">
+          <g stroke="#ae8547" stroke-width="1.2"><path d="m110 105 3 12 12 3-12 3-3 12-3-12-12-3 12-3Zm652 248 3 10 10 3-10 3-3 10-3-10-10-3 10-3Z"/><path d="M748 116c-24-31-44 6 0 29 44-23 24-60 0-29Z"/></g>
+          <g stroke="#9872a9" stroke-width="1.2" transform="translate(145 420) rotate(-18)"><path d="M0 0C-44-40-39 24 0 4 39 24 44-40 0 0Zm0 4C-28 4-14 33 0 10 14 33 28 4 0 4ZM0 0v13m0-13-5-7m5 7 5-7"/></g>
+        </svg>
+        <div class="lover-gifts__inner">
+          <header class="lover-gifts__header">
+            <p class="lover-gifts__eyebrow">WITH LOVE, FROM YOU</p>
+            <h2 id="lover-gifts-title"><img class="era-logo lover-gifts__logo" src="assets/logo-lover.webp" width="1000" height="489" alt="Lover" decoding="async"><br><em>GIFT</em> DEPARTMENT</h2>
+            <p class="lover-gifts__intro">Tu presencia es el regalo más bonito. Pero si deseas tener un detalle conmigo, aquí encontrarás algunas opciones.</p>
+            <p class="lover-gifts__hand">Choose a little something with love.</p>
+          </header>
+          <button class="lover-gifts__toggle" type="button" aria-expanded="false" aria-controls="lover-gift-options" hidden>
+            <span class="lover-gifts__stage" aria-hidden="true">
+              <span class="lover-gifts__box"><span class="lover-gifts__box-body"></span><span class="lover-gifts__lid"><span class="lover-gifts__bow"></span></span><span class="lover-gifts__seal">13</span></span>
+              <span class="lover-gifts__sparks"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </span>
+            <span class="lover-gifts__toggle-label">DESCUBRIR OPCIONES DE REGALO</span>
+            <svg class="lover-gifts__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="m7 10 5 5 5-5"/></svg>
+          </button>
+          <div class="lover-gifts__options" id="lover-gift-options">
+            <div class="lover-gifts__options-clip"><div class="lover-gifts__cards">
+              <article class="lover-gifts__card" data-gift="presence">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M16 10C4-4-10 15 16 28 42 15 28-4 16 10Z"/></svg>
+                <div><span class="lover-gifts__tag">TU PRESENCIA</span><h3>THE BEST GIFT</h3><p>Celebrar contigo será mi regalo favorito.</p></div>
+              </article>
+              <article class="lover-gifts__card" data-gift="registry" hidden>
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M5 12h22v6H5zm2 6v11h18V18M16 12v17m0-17C2 12 7-3 16 12c9-15 14 0 0 0Z"/></svg>
+                <div><span class="lover-gifts__tag">MESA DE REGALOS</span><h3>GIFT LIST</h3><p>Si deseas elegir un detalle especial, puedes consultar la mesa de regalos.</p><a target="_blank" rel="noopener noreferrer">VER MESA DE REGALOS</a></div>
+              </article>
+              <article class="lover-gifts__card" data-gift="digital" hidden>
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="m16 3 4 9 10 4-10 4-4 9-4-9-10-4 10-4Z"/></svg>
+                <div><span class="lover-gifts__tag">REGALO DIGITAL</span><h3>A LITTLE SOMETHING</h3><p>También puedes enviar un detalle de forma digital.</p><button class="lover-gifts__reveal" type="button" aria-controls="lover-bank-details" aria-expanded="false">VER DATOS</button>
+                  <div class="lover-gifts__bank" id="lover-bank-details" hidden><dl></dl><button class="lover-gifts__copy" type="button"><span>COPIAR</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-label="Correcto" role="img" hidden><path d="m4 10 4 4 8-9"/></svg></button></div>
+                </div>
+              </article>
+              <article class="lover-gifts__card" data-gift="deposit" hidden>
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M3 8h26v17H3zm0 5h26M7 20h7"/></svg>
+                <div><span class="lover-gifts__tag">DEPÓSITO</span><h3>SPECIAL DELIVERY</h3><p>Si lo prefieres, puedes hacer un depósito en tienda o ventanilla bancaria.</p><button class="lover-gifts__reveal" type="button" aria-controls="lover-deposit-details" aria-expanded="false">VER DATOS</button>
+                  <div class="lover-gifts__bank" id="lover-deposit-details" hidden><dl></dl><button class="lover-gifts__copy" type="button"><span>COPIAR</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-label="Correcto" role="img" hidden><path d="m4 10 4 4 8-9"/></svg></button></div>
+                </div>
+              </article>
+              <article class="lover-gifts__card" data-gift="envelope" hidden>
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" aria-hidden="true" focusable="false"><path d="M4 8h24v17H4zm0 0 12 10L28 8m-12 5.5c-2.5-3-6-.5-3 2l3 2.5 3-2.5c3-2.5-.5-5-3-2"/></svg>
+                <div><span class="lover-gifts__tag">LLUVIA DE SOBRES</span><h3>A LOVE LETTER</h3><p>También puedes traer tu detalle en un sobre el día de la fiesta; habrá un buzón especial para recibirlo.</p></div>
+              </article>
+            </div></div>
+          </div>
+          <p class="lover-gifts__status" role="status" aria-live="polite"></p>
+          <p class="lover-gifts__signature">With love, Alison</p>
+        </div>
+      </section>
+      <section class="speak-rsvp" id="speak-now-rsvp" aria-labelledby="speak-title">
+        <div class="speak-rsvp__inner">
+          <header class="speak-rsvp__header"><p class="speak-rsvp__eyebrow">THE MOMENT HAS ARRIVED</p><h2 id="speak-title"><span>IT’S TIME TO</span><img src="assets/speak-now-logo-tv.webp" width="1000" height="286" alt="Speak Now — Taylor’s Version" loading="lazy" decoding="async"></h2><p>¿Me acompañarás a celebrar esta nueva era?</p></header>
+          <div class="speak-rsvp__layout">
+            <div class="speak-rsvp__scene">
+              <div class="speak-rsvp__stage" role="group" aria-label="Escenario de confirmación" aria-expanded="false">
+                <img class="speak-rsvp__portrait" src="assets/speak-now-taylor.webp" width="500" height="719" alt="Taylor Swift cantando en la gira Speak Now de 2011" loading="lazy" decoding="async">
+                <span class="speak-rsvp__light" aria-hidden="true"></span><div class="speak-rsvp__curtain speak-rsvp__curtain--left" aria-hidden="true"><div class="speak-rsvp__drape"><img src="assets/speak-now/curtain-left.webp" width="520" height="720" alt="" decoding="async"><i class="speak-rsvp__fold"></i><i class="speak-rsvp__fold"></i><i class="speak-rsvp__fold"></i><i class="speak-rsvp__fold"></i><i class="speak-rsvp__fold"></i></div></div><div class="speak-rsvp__curtain speak-rsvp__curtain--right" aria-hidden="true"><div class="speak-rsvp__drape"><img src="assets/speak-now/curtain-right.webp" width="520" height="720" alt="" decoding="async"><i class="speak-rsvp__fold"></i><i class="speak-rsvp__fold"></i><i class="speak-rsvp__fold"></i><i class="speak-rsvp__fold"></i><i class="speak-rsvp__fold"></i></div></div><span class="speak-rsvp__seam" aria-hidden="true"></span>
+                
+                
+                <span class="speak-rsvp__hint" aria-hidden="true">Toca para abrir el escenario</span>
+                <button type="button" class="speak-rsvp__toggle" aria-label="Abrir el telón" aria-expanded="false" aria-controls="speak-form"></button>
+              </div>
+              <button class="speak-rsvp__primary" data-open="button" type="button" aria-controls="speak-form">CONFIRMAR ASISTENCIA</button>
+              <p class="speak-rsvp__deadline"></p>
+              <small class="speak-rsvp__credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Taylor_Swift_2011crop.jpg" target="_blank" rel="noopener noreferrer">dephisticate</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a> · adaptación de tamaño.</small>
+            </div>
+            <form id="speak-form" class="speak-rsvp__form" novalidate hidden>
+              <p class="speak-rsvp__pass">YOUR BACKSTAGE PASS <span aria-hidden="true">13</span></p>
+              <label for="speak-name">¿QUIÉN TOMA EL MICRÓFONO?</label><input id="speak-name" name="name" autocomplete="name" maxlength="100" placeholder="Escribe tu nombre" required aria-describedby="speak-name-error"><p class="speak-rsvp__error" id="speak-name-error" aria-live="polite"></p>
+              <fieldset aria-describedby="speak-choice-error"><legend>¿FORMARÁS PARTE DE ESTA ERA?</legend><div class="speak-rsvp__choices"><label><input type="radio" name="attendance" value="yes" required><span>YES, I’LL BE THERE</span></label><label><input type="radio" name="attendance" value="no"><span>NO PODRÉ ASISTIR</span></label></div><p class="speak-rsvp__error" id="speak-choice-error" aria-live="polite"></p></fieldset>
+              <div class="speak-rsvp__guests" hidden><p id="speak-count-label">¿CUÁNTAS PERSONAS ASISTIRÁN?</p><div class="speak-rsvp__stepper" role="group" aria-labelledby="speak-count-label"><button type="button" data-count="minus" aria-label="Quitar un asistente"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/></svg></button><output id="speak-count" aria-live="polite">1</output><button type="button" data-count="plus" aria-label="Añadir un asistente"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M10 4v12"/></svg></button></div></div>
+              <label for="speak-message">LEAVE A LITTLE MESSAGE <small>OPCIONAL</small></label><textarea id="speak-message" name="message" rows="2" maxlength="250" aria-describedby="speak-message-count"></textarea><output class="speak-rsvp__count" id="speak-message-count">0 / 250</output>
+              <div class="speak-rsvp__song"><label for="speak-song">SONG REQUEST <small>OPCIONAL</small></label><input id="speak-song" name="song" maxlength="120" placeholder="¿Qué canción no puede faltar?"></div>
+              <p class="speak-rsvp__response-note" aria-live="polite"></p><div class="speak-rsvp__sparks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <button type="submit" class="speak-rsvp__primary">SEND MY ANSWER</button><button type="button" class="speak-rsvp__secondary" data-copy>COPIAR RESPUESTA</button><p class="speak-rsvp__status" role="status"></p>
+            </form>
+          </div>
+          <div class="speak-rsvp__return" tabindex="-1" hidden><p class="speak-rsvp__thanks">Ya preparaste una respuesta.</p><p class="speak-rsvp__thanks-note"></p><button type="button" class="speak-rsvp__secondary" data-view>VER RESPUESTA</button><button type="button" class="speak-rsvp__secondary" data-change>CAMBIAR RESPUESTA</button></div><pre class="speak-rsvp__preview" hidden></pre>
+          <noscript><p>Activa JavaScript para preparar tu respuesta por WhatsApp.</p></noscript>
+        </div>
+      </section>
+      <section class="showgirl" id="showgirl-itinerary" aria-labelledby="showgirl-title">
+        <div class="showgirl__inner">
+          <header class="showgirl__header">
+            <p class="showgirl__eyebrow">TONIGHT’S PROGRAM <span>ITINERARIO</span></p>
+            <div class="showgirl__poster">
+              <button type="button" class="showgirl__photo showgirl__photo--hero" data-showgirl-photo aria-label="Ampliar fotografía del cartel principal"><img src="assets/showgirl/showgirl-01.webp" width="1000" height="1000" alt="Taylor Swift con vestido de lentejuelas naranja, recostada en un sofá de terciopelo" decoding="async"></button>
+              <div class="showgirl__poster-title"><h2 id="showgirl-title"><img src="assets/showgirl/logo.webp" width="600" height="460" alt="THE LIFE OF A SHOWGIRL" decoding="async"></h2><p>Alison’s Birthday Show</p></div>
+              <span class="showgirl__plate" aria-hidden="true">13</span>
+            </div>
+          </header>
+          <div class="showgirl__program">
+            <p class="showgirl__program-label"><span class="showgirl__bulbs" aria-hidden="true"><i></i><i></i><i></i></span>ONE NIGHT · FIVE ACTS<span class="showgirl__bulbs" aria-hidden="true"><i></i><i></i><i></i></span></p>
+            <ol class="showgirl__acts">
+              <li class="showgirl__act"><span class="showgirl__lamp" aria-hidden="true"></span><div class="showgirl__act-meta"><span>ACT I</span><span>[HORA]</span></div><h3>Recepción de invitados</h3></li>
+              <li class="showgirl__act"><span class="showgirl__lamp" aria-hidden="true"></span><div class="showgirl__act-meta"><span>ACT II</span><span>[HORA]</span></div><h3>Cena y brindis</h3></li>
+              <li class="showgirl__interlude"><button type="button" class="showgirl__photo" data-showgirl-photo aria-label="Ampliar fotografía entre actos"><img src="assets/showgirl/showgirl-02.webp" width="1000" height="857" alt="Taylor Swift de perfil bajo luces cálidas, con joyas y plumas color durazno" loading="lazy" decoding="async"></button><span aria-hidden="true">BEHIND THE SPOTLIGHT</span></li>
+              <li class="showgirl__act"><span class="showgirl__lamp" aria-hidden="true"></span><div class="showgirl__act-meta"><span>ACT III</span><span>[HORA]</span></div><h3>Pastel de cumpleaños</h3></li>
+              <li class="showgirl__act"><span class="showgirl__lamp" aria-hidden="true"></span><div class="showgirl__act-meta"><span>ACT IV</span><span>[HORA]</span></div><h3>Baile y celebración</h3></li>
+              <li class="showgirl__act"><span class="showgirl__lamp" aria-hidden="true"></span><div class="showgirl__act-meta"><span>FINAL ACT</span><span>[HORA]</span></div><h3>The last song</h3></li>
+            </ol>
+          </div>
+        </div>
+        <footer class="showgirl__finale">
+          <button type="button" class="showgirl__photo" data-showgirl-photo aria-label="Ampliar fotografía final del espectáculo"><img src="assets/showgirl/showgirl-03.webp" width="1000" height="1000" alt="Taylor Swift con un tocado de cristales rodeada de plumas rojizas y luces de escenario" loading="lazy" decoding="async"></button>
+          <div class="showgirl__finale-copy">
+            <span class="showgirl__spot" aria-hidden="true"></span>
+            <p class="showgirl__eyebrow showgirl__line">THE FINAL BOW</p>
+            <h3><span class="showgirl__line">THE SHOW</span> <em class="showgirl__line">MUST GO ON</em></h3>
+            <p class="showgirl__quote showgirl__line">“And baby, that’s show business for you.”</p>
+            <a class="showgirl__next showgirl__line" aria-label="Continuar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3v17m-6-6 6 6 6-6"/></svg></a>
+          </div>
+        </footer>
+      </section>
     </main>
+    <dialog class="showgirl-lightbox" id="showgirl-lightbox" aria-label="Fotografía del programa The Life of a Showgirl"><button type="button" aria-label="Cerrar fotografía"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><img alt=""></dialog>
     <div class="red-memory__dialog" id="red-memory-dialog" role="dialog" aria-modal="true" aria-labelledby="red-dialog-title" aria-describedby="red-dialog-note" hidden>
       <div class="red-memory__dialog-backdrop" data-red-close></div>
       <div class="red-memory__dialog-shell" role="document">
