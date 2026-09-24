@@ -122,8 +122,8 @@ body.cover-open { position: fixed; inset: 0; }
 .icon { display: inline-block; width: 18px; height: 18px; flex-shrink: 0; vertical-align: middle; }
 .invitation-ticket__star { color: #389ea9; width: 15px; height: 15px; }
 .sound-toggle {
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  z-index: 20;
   top: max(16px, calc(env(safe-area-inset-top) + 10px));
   right: max(16px, calc(env(safe-area-inset-right) + 10px));
   display: inline-flex;
@@ -143,8 +143,11 @@ body.cover-open { position: fixed; inset: 0; }
 .sound-toggle:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .sound-toggle__on, .sound-toggle[aria-pressed="true"] .sound-toggle__off { display: none; }
 .sound-toggle[aria-pressed="true"] .sound-toggle__on { display: initial; }
+body:not(.cover-open) .sound-toggle { width: 44px; height: 44px; padding: 0; justify-content: center; }
+body:not(.cover-open) .sound-toggle span { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .sound-status {
-  position: absolute;
+  position: fixed;
+  z-index: 20;
   top: max(64px, calc(env(safe-area-inset-top) + 58px));
   right: max(16px, env(safe-area-inset-right));
   max-width: min(260px, 80%);

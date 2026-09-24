@@ -33,6 +33,17 @@
     <script src="showgirl.js" defer></script>
   </head>
   <body class="cover-open">
+    <audio id="invitation-audio" src="assets/out-of-the-woods.mp3" loop preload="metadata"></audio>
+    <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Música de la invitación" aria-controls="invitation-audio" aria-pressed="false">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M11 5 6 9H3v6h3l5 4Z"/>
+        <path class="sound-toggle__off" d="m16 9 6 6m0-6-6 6"/>
+        <path class="sound-toggle__on" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
+      </svg>
+      <span id="sound-label">ACTIVAR AUDIO</span>
+    </button>
+    <p class="sound-status" id="sound-status" role="status"></p>
+
     <section class="cover" id="invitation-cover" aria-labelledby="era-title">
       <video class="cover__video" id="cover-video" autoplay muted loop playsinline
         preload="auto" poster="assets/1989-poster.jpg" aria-hidden="true" tabindex="-1"
@@ -40,16 +51,6 @@
         <source src="assets/1989-background.mp4" type="video/mp4">
       </video>
       <div class="cover__wash" aria-hidden="true"></div>
-
-      <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Sonido del video" aria-pressed="false">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-          <path d="M11 5 6 9H3v6h3l5 4Z"/>
-          <path class="sound-toggle__off" d="m16 9 6 6m0-6-6 6"/>
-          <path class="sound-toggle__on" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>
-        </svg>
-        <span id="sound-label">ACTIVAR AUDIO</span>
-      </button>
-      <p class="sound-status" id="sound-status" role="status"></p>
 
       <div class="cover__content">
         <p class="cover__eyebrow enter enter--welcome">WELCOME TO</p>

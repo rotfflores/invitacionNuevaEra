@@ -3,6 +3,7 @@
 
   const cover = document.getElementById('invitation-cover');
   const video = document.getElementById('cover-video');
+  const audio = document.getElementById('invitation-audio');
   const button = document.getElementById('open-invitation');
   const content = document.getElementById('invitation-content');
   const soundToggle = document.getElementById('sound-toggle');
@@ -14,9 +15,10 @@
   let exitTimer;
   let soundEnabled = false;
   let soundInteracted = false;
+  let soundRequest = 0;
 
   const updateSound = () => {
-    video.muted = !soundEnabled;
+    audio.muted = !soundEnabled;
     soundToggle.setAttribute('aria-pressed', String(soundEnabled));
     soundLabel.textContent = soundEnabled ? 'SILENCIAR AUDIO' : 'ACTIVAR AUDIO';
   };
@@ -27,14 +29,13 @@
   video.playsInline = true;
 
   const playBackground = () => {
-    if (opening || (reducedMotion.matches && !soundEnabled) || document.hidden) return;
-    video.muted = !soundEnabled;
+    if (opening || reducedMotion.matches || document.hidden) return;
     // Autoplay can be blocked by OS power/data-saving policies. Keep the poster.
     video.play()?.catch(() => cover.classList.remove('is-playing'));
   };
 
   video.addEventListener('playing', () => {
-    if (opening || (reducedMotion.matches && !soundEnabled) || document.hidden) {
+    if (opening || reducedMotion.matches || document.hidden) {
       video.pause();
       return;
     }
@@ -46,35 +47,44 @@
     video.autoplay = !reducedMotion.matches;
     if (reducedMotion.matches) {
       cover.classList.remove('is-playing');
-      if (!soundEnabled) video.pause();
+      video.pause();
     } else {
       playBackground();
     }
   };
 
-  const setSound = async (enabled) => {
-    if (opening) return;
+  const pauseMusic = () => {
+    soundRequest += 1;
+    audio.pause();
+  };
+
+  const playMusic = async () => {
+    if (!soundEnabled || document.hidden) return;
+    const request = ++soundRequest;
+    try {
+      if (audio.error) audio.load();
+      await audio.play();
+    } catch {
+      if (request !== soundRequest) return;
+      soundEnabled = false;
+      updateSound();
+      soundStatus.textContent = 'No se pudo reproducir el audio. Toca para volver a intentarlo.';
+    }
+  };
+
+  const setSound = (enabled) => {
     soundInteracted = true;
     soundEnabled = enabled;
     soundStatus.textContent = '';
     updateSound();
-    if (!soundEnabled) {
-      if (reducedMotion.matches) video.pause();
-      return;
-    }
-    // A direct tap authorizes sound. With reduced motion the poster stays visible.
-    soundToggle.disabled = true;
-    try {
-      await video.play();
-    } catch {
-      soundEnabled = false;
-      updateSound();
-      soundStatus.textContent = 'No se pudo reproducir el audio. Toca para volver a intentarlo.';
-    } finally {
-      soundToggle.disabled = false;
-      if (opening || document.hidden) video.pause();
-    }
+    // Keep this play request inside the tap, including when opening directly.
+    if (soundEnabled) playMusic();
+    else pauseMusic();
   };
+
+  audio.addEventListener('playing', () => {
+    if (!soundEnabled || document.hidden) pauseMusic();
+  });
 
   soundToggle.addEventListener('click', () => setSound(!soundEnabled));
   cover.addEventListener('click', (event) => {
@@ -97,6 +107,7 @@
 
   button.addEventListener('click', () => {
     if (opening) return;
+    if (!soundInteracted) setSound(true);
     opening = true;
     button.disabled = true;
     video.pause();
@@ -113,11 +124,23 @@
   });
 
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) video.pause();
-    else playBackground();
+    if (document.hidden) {
+      video.pause();
+      pauseMusic();
+    } else {
+      playBackground();
+      playMusic();
+    }
   });
-  window.addEventListener('pagehide', () => video.pause());
-  window.addEventListener('pageshow', playBackground);
+  window.addEventListener('pagehide', () => {
+    video.pause();
+    pauseMusic();
+  });
+  window.addEventListener('pageshow', () => {
+    playBackground();
+    playMusic();
+  });
   reducedMotion.addEventListener('change', syncMotion);
+  updateSound();
   syncMotion();
 })();

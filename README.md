@@ -4,7 +4,7 @@ Sitio estático en HTML, CSS y JavaScript, sin compilación ni dependencias de a
 Abre `index.html` o sirve esta carpeta con un servidor HTTP local.
 
 - La invitación está personalizada para Alison en `index.html`.
-- El primer toque en el fondo o texto de la portada activa el audio. El control «ACTIVAR AUDIO» también permite escucharlo y volver a silenciarlo; tocar el fondo después no anula el silencio elegido. Al abrir la invitación se detiene. Con movimiento reducido, el audio puede escucharse manteniendo el fotograma estático.
+- El primer toque en el fondo o texto de la portada, o en «ABRIR INVITACIÓN», reproduce `assets/out-of-the-woods.mp3`, la canción proporcionada por la usuaria, en bucle. El control «ACTIVAR AUDIO» permanece disponible en toda la invitación y permite escucharla o silenciarla; tocar el fondo o abrir después no anula el silencio elegido. Al abrir la invitación se detiene el video, mientras la canción continúa. Al ocultar la pestaña se pausa y al volver se reanuda si estaba activada. El video siempre está silenciado; con movimiento reducido permanece detenido y se muestra el fotograma estático aunque se escuche la canción.
 - Los iconos son SVG integrados y no dependen de las fuentes o emojis del dispositivo.
 - `assets/1989-background.mp4` es el video original proporcionado.
 - `assets/1989-poster.jpg` es un fotograma de respaldo. El fondo azul permanece si los medios no cargan.
