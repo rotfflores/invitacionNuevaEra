@@ -3,6 +3,10 @@
 Sitio estático en HTML, CSS y JavaScript, sin compilación ni dependencias de aplicación.
 Abre `index.html` o sirve esta carpeta con un servidor HTTP local.
 
+## Vista previa al compartir
+
+`index.html` incluye metadatos Open Graph estáticos para el enlace público `https://rotfflores.github.io/invitacionNuevaEra/`. La imagen `assets/alison-invitacion-social-v1.jpg` es una captura de la portada sin controles, de 1200 × 630 píxeles, con el nombre de Alison. Tanto el HTML como la imagen deben estar publicados para que WhatsApp pueda obtenerlos; la dirección local no es compartible. Si cambia el dominio, actualizar las URL absolutas del enlace canónico, `og:url`, `og:image`, `og:image:secure_url` y `twitter:image`. Al reemplazar la imagen, usar un nombre de archivo nuevo y actualizar esos metadatos.
+
 - La invitación está personalizada para Alison en `index.html`.
 - El primer toque en el fondo o texto de la portada, o en «ABRIR INVITACIÓN», reproduce `assets/out-of-the-woods.mp3`, la canción proporcionada por la usuaria, en bucle. El control «ACTIVAR AUDIO» permanece disponible en toda la invitación y permite escucharla o silenciarla; tocar el fondo o abrir después no anula el silencio elegido. Al abrir la invitación se detiene el video, mientras la canción continúa. Al ocultar la pestaña se pausa y al volver se reanuda si estaba activada. El video siempre está silenciado; con movimiento reducido permanece detenido y se muestra el fotograma estático aunque se escuche la canción.
 - Los iconos son SVG integrados y no dependen de las fuentes o emojis del dispositivo.
