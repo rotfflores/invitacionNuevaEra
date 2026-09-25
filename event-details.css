@@ -157,6 +157,8 @@
 
 /* The supplied archive paper stays within this chapter as it scrolls. */
 #event-details.poets { position: relative; isolation: isolate; overflow: clip; background: #e8e0d5; }
+/* Midnights casts a soft shadow onto Poets instead of blending into it. */
+#event-details.poets::before { content: ""; position: absolute; z-index: 5; top: -24px; left: -4%; width: 108%; height: 24px; background: #090d1d; box-shadow: 0 9px 20px 7px rgb(9 13 29 / 58%); pointer-events: none; }
 .poets__backdrop {
   position: sticky;
   z-index: 0;

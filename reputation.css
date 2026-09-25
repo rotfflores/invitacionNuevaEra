@@ -14,17 +14,12 @@
 .reputation, .reputation__header, .reputation__palette, .reputation__looks {
   scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px);
 }
-.reputation__transition {
-  height: 15px;
-  background:
-    radial-gradient(ellipse at 18% 100%, #101010 34%, transparent 72%),
-    radial-gradient(ellipse at 80% 100%, #101010 22%, transparent 70%),
-    linear-gradient(180deg, #a49b8b 0%, #322e28 32%, #101010 95%);
-}
+/* Poets casts a soft shadow onto Reputation instead of blending into it. */
+.reputation::before { content: ""; position: absolute; z-index: 5; top: -24px; left: -4%; width: 108%; height: 24px; background: #000; box-shadow: 0 9px 20px 7px rgb(0 0 0 / 72%); pointer-events: none; }
 .reputation__paper-noise {
   position: absolute;
   z-index: -1;
-  inset: 15px 0 0;
+  inset: 0;
   overflow: hidden;
   pointer-events: none;
   background: repeating-linear-gradient(0deg, transparent 0 3px, #b9b2a305 4px, transparent 5px);
@@ -193,7 +188,6 @@
   .reputation__look-track { gap: 18px; }
 }
 @media (max-width: 700px) {
-  .reputation__transition { height: 11px; }
   .reputation__layout { width: auto; margin: 0 max(20px, env(safe-area-inset-right, 0px)) 0 max(20px, env(safe-area-inset-left, 0px)); padding-top: 21px; }
   .reputation__masthead { margin-bottom: 13px; padding-bottom: 12px; gap: 12px; }
   .reputation__kicker { font-size: 9px; letter-spacing: .14em; }

@@ -384,6 +384,8 @@ body.red-memory-dialog-open { overflow: hidden; }
 
 /* The autumn image remains with Red; the supplied woven texture covers the book. */
 .red-memory { position: relative; min-height: 100vh; min-height: 100dvh; background: #4b1719; }
+/* Reputation casts a soft shadow onto Red instead of blending into it. */
+.red-memory::before { content: ""; position: absolute; z-index: 5; top: -24px; left: -4%; width: 108%; height: 24px; background: #000; box-shadow: 0 9px 20px 7px rgb(0 0 0 / 68%); pointer-events: none; }
 .red-memory__backdrop {
   position: sticky;
   z-index: 0;
